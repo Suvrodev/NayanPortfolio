@@ -1,54 +1,18 @@
-import React, { useEffect } from "react";
-import "./SkillLoading.css"; // Ensure you have this line if you're planning to use external CSS
+import React from "react";
+import "./SkillLoading.css";
 
-const skills = {
-  Wordpress: "100%",
-  Webdesign: "90%",
-  Webdevelopmen: "70%",
-  GraphicsDesign: "55%",
-  Uiuxdesign: "65%",
-  seo: "70%",
-};
-
-const SkillBar = ({ skill, percentage, delay }) => {
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      document.getElementById(`${skill}-percent`).innerHTML = percentage;
-      document.getElementById(`progress-${skill}`).style.width = percentage;
-    }, delay);
-
-    return () => clearTimeout(timer);
-  }, [skill, percentage, delay]);
-
+const SkillLoading = () => {
+  const a = ["a", "b", "c"];
+  const b = [50, 75, 90];
   return (
-    <li className="skillBar">
-      <div className="progressBarTitle">
-        <h3>{skill.toUpperCase()}</h3>
-        <span className="percent" id={`${skill}-percent`}></span>
-      </div>
-      <div className="barContainer">
-        <span className="progressBar" id={`progress-${skill}`}></span>
-      </div>
-    </li>
+    <div>
+      <progress
+        className="progress progress-white w-56"
+        value={70}
+        max="100"
+      ></progress>
+    </div>
   );
 };
 
-const App = () => {
-  let delay = 700;
-  let multiplier = 4;
-
-  return (
-    <ul className="skillsBarContainer">
-      {Object.entries(skills).map(([skill, percentage]) => (
-        <SkillBar
-          key={skill}
-          skill={skill}
-          percentage={percentage}
-          delay={delay * multiplier++}
-        />
-      ))}
-    </ul>
-  );
-};
-
-export default App;
+export default SkillLoading;

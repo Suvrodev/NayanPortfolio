@@ -52,7 +52,7 @@ const About = () => {
           <DownloadCV />
         </div>
 
-        {/* <SkillLoading /> */}
+        <SkillLoading />
       </div>
 
       <div className="bg-[#222222] p-36">

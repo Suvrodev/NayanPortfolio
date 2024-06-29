@@ -10,10 +10,10 @@ import h from "../../../assets/trustedContact/8a.png";
 
 const TrustedClients = () => {
   const imageArray = [a, b, c, d, e, f, g, h];
-  console.log(imageArray);
+  //   console.log(imageArray);
   return (
     <div>
-      <h1>Trustade Contact</h1>
+      <h1 className="text-2xl text-white font-bold mb-6">Trustade Clients</h1>
       <div className="grid grid-cols-4">
         {imageArray.map((img, idx) => (
           <div
