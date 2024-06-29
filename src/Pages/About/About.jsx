@@ -4,6 +4,7 @@ import LinkBox from "../../Shared/LinkBox/LinkBox";
 
 import aboutImage from "../../assets/Nayan.jpg";
 import BioData from "./BioData/BioData";
+import DownloadCV from "./DownLoadCV/DownloadCV";
 // import SkillLoading from "./SkillLoading/SkillLoading";
 
 const About = () => {
@@ -41,7 +42,7 @@ const About = () => {
         <div className="dag"></div>
 
         <div className="my-10">
-          <button className="btn bg-black text-white">Download CV</button>
+          <DownloadCV />
         </div>
 
         {/* <SkillLoading /> */}
