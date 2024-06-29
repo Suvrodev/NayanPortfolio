@@ -6,7 +6,7 @@ const Main = () => {
   return (
     <div className="">
       <div className="flex">
-        <div className="w-[25%]">
+        <div className="w-[25%] ">
           <Header />
         </div>
         <div className="w-[75%] bg-[#333333]">
