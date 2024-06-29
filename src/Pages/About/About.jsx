@@ -5,12 +5,12 @@ import LinkBox from "../../Shared/LinkBox/LinkBox";
 import aboutImage from "../../assets/Nayan.jpg";
 import BioData from "./BioData/BioData";
 import DownloadCV from "./DownLoadCV/DownloadCV";
-// import SkillLoading from "./SkillLoading/SkillLoading";
+import SkillLoading from "./SkillLoading/SkillLoading";
 
 const About = () => {
   return (
     <div className="overflow-hidden">
-      <div className="m-28">
+      <div className="pageMargin">
         <LinkBox text1={"About"} />
         {/* <h1 className="my-10 text-3xl text-white font-bold">About Me</h1> */}
         <h1 className="my-10 pageTitle">About Me</h1>

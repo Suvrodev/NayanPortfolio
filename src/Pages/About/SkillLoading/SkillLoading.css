@@ -1,0 +1,50 @@
+.skillsBarContainer {
+    width: 40%;
+    min-width: 300px;
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+  }
+  
+  .skillBar {
+    position: relative;
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .progressBarTitle {
+    color: #fff;
+  }
+  
+  .progressBarTitle h3 {
+    display: inline-block;
+    margin: 0;
+  }
+  
+  .percent {
+    position: absolute;
+    right: 5px;
+  }
+  
+  .barContainer {
+    background: #555;
+    position: relative;
+    width: 100%;
+    height: 5px;
+    margin-top: 5px;
+    display: block;
+    border-radius: 5px;
+  }
+  
+  .progressBar {
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    background-color: #fff; /* White color for progress bar */
+    border-radius: 5px;
+    animation-duration: 2s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: both;
+  }
+  
