@@ -3,6 +3,7 @@ import "./About.css";
 import LinkBox from "../../Shared/LinkBox/LinkBox";
 
 import aboutImage from "../../assets/Nayan.jpg";
+import BioData from "./BioData/BioData";
 // import SkillLoading from "./SkillLoading/SkillLoading";
 
 const About = () => {
@@ -15,8 +16,7 @@ const About = () => {
 
         <img className="h-[650px] w-full" src={aboutImage} alt="" />
         <h1 className="my-10 topicTitle">Sarkar Nayan</h1>
-        {/* <p></p> */}
-        {/* <hr /> */}
+
         <div className="dag"></div>
         <div className="text-[18px] my-10">
           <p>
@@ -35,6 +35,14 @@ const About = () => {
 
         {/* Dag */}
         <div className="dag"></div>
+        <div className="my-10">
+          <BioData />
+        </div>
+        <div className="dag"></div>
+
+        <div className="my-10">
+          <button className="btn bg-black text-white">Download CV</button>
+        </div>
 
         {/* <SkillLoading /> */}
       </div>
