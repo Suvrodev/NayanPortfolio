@@ -6,6 +6,7 @@ import aboutImage from "../../assets/Nayan.jpg";
 import BioData from "./BioData/BioData";
 import DownloadCV from "./DownLoadCV/DownloadCV";
 import SkillLoading from "./SkillLoading/SkillLoading";
+import Education from "./Education/Education";
 
 const About = () => {
   return (
@@ -16,7 +17,13 @@ const About = () => {
         <h1 className="my-10 pageTitle">About Me</h1>
 
         <img className="h-[650px] w-full" src={aboutImage} alt="" />
-        <h1 className="my-10 topicTitle">Sarkar Nayan</h1>
+
+        <div className="my-10">
+          <h1 className=" topicTitle">Sarkar Nayan</h1>
+          <p className="font-bold">
+            Web Designer & Developer, Graphics & UI UX designer.
+          </p>
+        </div>
 
         <div className="dag"></div>
         <div className="text-[18px] my-10">
@@ -46,6 +53,10 @@ const About = () => {
         </div>
 
         {/* <SkillLoading /> */}
+      </div>
+
+      <div className="bg-[#222222] p-36">
+        <Education />
       </div>
     </div>
   );
