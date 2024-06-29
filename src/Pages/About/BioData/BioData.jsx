@@ -9,17 +9,22 @@ const BioData = () => {
   }, []);
 
   const keys = Object.keys(data);
-  console.log(keys);
+  // console.log(keys);
   return (
-    <div className="grid grid-cols-2">
+    <div className="grid grid-cols-2 w-full text-white gap-x-80">
       {keys.map((k, idx) => (
-        <p className="text-white  w-[250px] " key={idx}>
-          <span className="grid grid-cols-2">
+        <p className="text-white  " key={idx}>
+          <span className=" w-[1000px] grid grid-cols-2  ">
             {" "}
-            <span className="font-bold">{k}:</span> <span>{data[k]}</span>
+            <span className="font-bold">{k}:</span>{" "}
+            <span className=" relative right-[400px] ">{data[k]}</span>
           </span>
         </p>
       ))}
+      {/* <div className="grid grid-cols-2">
+        <h1 className="font-bold">Birthday:</h1>
+        <p>05 sep, 2000</p>
+      </div> */}
     </div>
   );
 };
