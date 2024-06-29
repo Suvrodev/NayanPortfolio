@@ -1,0 +1,17 @@
+.pageTitle{
+    font-size: 32px;
+    color: white;
+    font-weight: 700;
+}
+
+.topicTitle{
+    font-size: 28px;
+    color: white;
+    font-weight: 700;
+}
+.dag{
+    height: 0px;
+    border: 2px solid #474747;
+    border-top: 0;
+    /* background-color: white; */
+}
