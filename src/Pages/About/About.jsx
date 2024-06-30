@@ -7,6 +7,7 @@ import BioData from "./BioData/BioData";
 import DownloadCV from "./DownLoadCV/DownloadCV";
 import SkillLoading from "./SkillLoading/SkillLoading";
 import Education from "./Education/Education";
+import KnowladgeInterest from "./KnowladgeInterest/KnowladgeInterest";
 
 const About = () => {
   return (
@@ -52,12 +53,14 @@ const About = () => {
           <DownloadCV />
         </div>
 
-        <SkillLoading />
+        <div className="my-10">
+          <KnowladgeInterest />
+        </div>
+
+        {/* <SkillLoading /> */}
       </div>
 
-      <div className="bg-[#222222] p-36">
-        <Education />
-      </div>
+      <div className="bg-[#222222] p-36">{/* <Education /> */}</div>
     </div>
   );
 };
