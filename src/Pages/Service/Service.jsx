@@ -2,6 +2,8 @@ import React from "react";
 import TrustedClients from "./TrustedClients/TrustedClients";
 import LinkBox from "../../Shared/LinkBox/LinkBox";
 import FunFact from "./FunFact/FunFact";
+import PricingList from "./PricingList/PricingList";
+import Consult from "./Consult/Consult";
 
 const Service = () => {
   return (
@@ -11,6 +13,12 @@ const Service = () => {
       </div>
       <div className="p-28 bg-[#222222]">
         <TrustedClients />
+      </div>
+      <div>
+        <Consult />
+      </div>
+      <div className="p-28">
+        <PricingList />
       </div>
       <div className="pageMargin">
         <FunFact />
