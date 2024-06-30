@@ -6,8 +6,8 @@ import aboutImage from "../../assets/Nayan.jpg";
 import BioData from "./BioData/BioData";
 import DownloadCV from "./DownLoadCV/DownloadCV";
 import SkillLoading from "./SkillLoading/SkillLoading";
-import Education from "./Education/Education";
 import KnowladgeInterest from "./KnowladgeInterest/KnowladgeInterest";
+import EducationExperience from "./EducationExperience/EducationExperience";
 
 const About = () => {
   return (
@@ -60,7 +60,10 @@ const About = () => {
         {/* <SkillLoading /> */}
       </div>
 
-      <div className="bg-[#222222] p-36">{/* <Education /> */}</div>
+      {/* <div className="bg-[#222222] p-36"> */}
+      <div className="bg-[#222222] p-10">
+        <EducationExperience />
+      </div>
     </div>
   );
 };
