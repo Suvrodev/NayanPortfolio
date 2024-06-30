@@ -52,12 +52,14 @@ const About = () => {
         <div className="my-10">
           <DownloadCV />
         </div>
+      </div>
 
-        <div className="my-10">
-          <KnowladgeInterest />
-        </div>
+      <div className="p-28 bg-[#222222]">
+        <SkillLoading />
+      </div>
 
-        {/* <SkillLoading /> */}
+      <div className="px-28 py-20">
+        <KnowladgeInterest />
       </div>
 
       {/* <div className="bg-[#222222] p-36"> */}
