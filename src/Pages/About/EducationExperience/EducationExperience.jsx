@@ -17,7 +17,7 @@ const EducationExperience = () => {
   }, []);
 
   // console.log(educations);
-  console.log(experiences);
+  // console.log(experiences);
   return (
     <div>
       <div className="flex text-white">
