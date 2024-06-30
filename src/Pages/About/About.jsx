@@ -63,7 +63,7 @@ const About = () => {
       </div>
 
       {/* <div className="bg-[#222222] p-36"> */}
-      <div className="bg-[#222222] p-10">
+      <div className="bg-[#222222] px-10 py-20 ">
         <EducationExperience />
       </div>
     </div>
