@@ -4,18 +4,17 @@ import React from "react";
 // import insertCss from "insert-css";
 
 import { Rating } from "@smastrom/react-rating";
-
 import "@smastrom/react-rating/style.css";
 
 const TestimonialCard = ({ testimonial }) => {
-  console.log(testimonial);
+  //   console.log(testimonial);
   const { image, desc, rating, name, position } = testimonial;
   return (
     <div className="flex w-[70%] mx-auto">
       {/* Left Div */}
       <div className="w-[20%] flex justify-between ">
         <div className="flex items-center justify-center">
-          <img src={image} alt="" className="w-[150px] h-[150px]" />
+          <img src={image} alt="" className="w-[150px] h-[150px] z-10 " />
         </div>
         <div className="h-full relative flex items-center">
           <div className="absolute w-[25px] h-[1px] bg-black top-[50%] right-0"></div>
