@@ -26,7 +26,7 @@ const Testimonial = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 3000); // Change the interval time as needed
+    }, 1000); // Change the interval time as needed
 
     return () => clearInterval(interval);
   }, []);

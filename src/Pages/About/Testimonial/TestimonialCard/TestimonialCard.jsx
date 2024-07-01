@@ -10,15 +10,15 @@ const TestimonialCard = ({ testimonial }) => {
   //   console.log(testimonial);
   const { image, desc, rating, name, position } = testimonial;
   return (
-    <div className="flex w-[70%] mx-auto">
+    <div className="flex w-[80%] mx-auto">
       {/* Left Div */}
       <div className="w-[20%] flex justify-between ">
         <div className="flex items-center justify-center">
           <img src={image} alt="" className="w-[150px] h-[150px] z-10 " />
         </div>
         <div className="h-full relative flex items-center">
-          <div className="absolute w-[25px] h-[1px] bg-black top-[50%] right-0"></div>
-          <div className="w-[1px] h-[150px] bg-black"></div>
+          <div className="absolute w-[25px] h-[2px] bg-white top-[50%] right-0"></div>
+          <div className="w-[1px] h-[150px] bg-white"></div>
         </div>
       </div>
 
