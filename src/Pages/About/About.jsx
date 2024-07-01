@@ -8,6 +8,7 @@ import DownloadCV from "./DownLoadCV/DownloadCV";
 import SkillLoading from "./SkillLoading/SkillLoading";
 import KnowladgeInterest from "./KnowladgeInterest/KnowladgeInterest";
 import EducationExperience from "./EducationExperience/EducationExperience";
+import Testimonial from "./Testimonial/Testimonial";
 
 const About = () => {
   return (
@@ -65,6 +66,10 @@ const About = () => {
       {/* <div className="bg-[#222222] p-36"> */}
       <div className="bg-[#222222] px-10 py-20 ">
         <EducationExperience />
+      </div>
+
+      <div className=" px-10 py-20 ">
+        <Testimonial />
       </div>
     </div>
   );
