@@ -21,7 +21,13 @@ const Testimonial = () => {
           </h1>
         </div>
         <div>
-          <TestimonialCard />
+          {testimonials.map((testimonial, idx) => (
+            <TestimonialCard
+              key={idx}
+              testimonial={testimonial}
+            ></TestimonialCard>
+          ))}
+          {/* <TestimonialCard /> */}
         </div>
       </div>
     </div>
