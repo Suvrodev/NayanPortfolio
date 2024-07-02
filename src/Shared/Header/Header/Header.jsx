@@ -1,12 +1,16 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import logoImage from "../../../assets/HeaderImage/Logo.png";
 
 const Header = () => {
   return (
     <div className="bg-[#222222] h-[100vh] text-white pl-16 overflow-hidden sticky top-0">
-      <h1 className="text-4xl font-bold mt-20 mb-36 tracking-widest">
+      {/* <h1 className="text-4xl font-bold mt-20 mb-36 tracking-widest">
         Sarkar Nayan
-      </h1>
+      </h1> */}
+      <div className="mt-20 mb-36 ">
+        <img src={logoImage} alt="" className="w-[70%]" />
+      </div>
 
       <div className="flex flex-col gap-4 font-bold">
         <NavLink
