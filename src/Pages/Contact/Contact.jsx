@@ -1,6 +1,7 @@
 import React from "react";
 import mapImage from "../../assets/Map/Map.jpg";
 import LinkBox from "../../Shared/LinkBox/LinkBox";
+import ContactBox from "./ContactBox/ContactBox";
 const Contact = () => {
   return (
     <div className="overflow-hidden">
@@ -8,6 +9,9 @@ const Contact = () => {
         <LinkBox text1={"Home  >  Contact"} />
         {/* <h1 className="my-10 text-3xl text-white font-bold">About Me</h1> */}
         <h1 className="my-10 pageTitle">About Me</h1>
+        <div className="my-20">
+          <ContactBox />
+        </div>
         <img src={mapImage} alt="" />
 
         <div className="mt-10 ">
