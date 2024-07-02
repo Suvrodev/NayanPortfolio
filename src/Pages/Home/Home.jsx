@@ -10,6 +10,7 @@ import {
   FaWhatsapp,
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import HomeButton from "../../Shared/HomeButton/HomeButton";
 
 const Home = () => {
   const divStyle = {
@@ -22,45 +23,54 @@ const Home = () => {
   };
 
   return (
-    <div className="flex justify-center items-center h-[100vh]">
-      <div className="flex gap-10 w-[75%] ">
-        <div>
-          {/* <img className="w-[350px] h-[350px]" src={nayanImage} alt="" /> */}
-          <div className="abs_img  border-8" style={divStyle}></div>
-        </div>
-        <div className="flex flex-col justify-center gap-6">
-          <h1 className="text-4xl font-bold">Sarkar Nayan</h1>
-          <p className="text-[20px]">
-            {/* I am a WordPress Developer at heart and create features <br /> that
+    <div>
+      <div className="flex justify-center items-center mt-60">
+        <div className="flex gap-10 w-[75%] ">
+          <div>
+            {/* <img className="w-[350px] h-[350px]" src={nayanImage} alt="" /> */}
+            <div className="abs_img  border-8" style={divStyle}></div>
+          </div>
+          <div className="flex flex-col justify-center gap-6">
+            <h1 className="text-4xl font-bold">Sarkar Nayan</h1>
+            <p className="text-[20px]">
+              {/* I am a WordPress Developer at heart and create features <br /> that
             are best suited for the job at hand. */}
-            Highly motivated and detail-oriented Web Developer with a Bachelor's
-            degree in Computer Science and Engineering for 4 years. Proficient
-            in PHP, with a deep understanding of the Laravel framework. Seeking
-            to leverage my technical skills and passion for web development to
-            provide high-quality, user-centric solutions in a challenging role.
-            Committed to producing high-quality, innovative, and scalable code
-            to drive the success of your team and projects.
-          </p>
-          <div className="flex gap-4 items-center">
-            <Link to="">
-              <FaFacebookF />
-            </Link>
-            <Link to="">
-              <FaTwitter />
-            </Link>
-            <Link to="">
-              <FaInstagram />
-            </Link>
-            <Link to="">
-              <FaWhatsapp />
-            </Link>
+              Highly motivated and detail-oriented Web Developer with a
+              Bachelor's degree in Computer Science and Engineering for 4 years.
+              Proficient in PHP, with a deep understanding of the Laravel
+              framework. Seeking to leverage my technical skills and passion for
+              web development to provide high-quality, user-centric solutions in
+              a challenging role. Committed to producing high-quality,
+              innovative, and scalable code to drive the success of your team
+              and projects.
+            </p>
+            <div className="flex gap-4 items-center">
+              <Link to="">
+                <FaFacebookF />
+              </Link>
+              <Link to="">
+                <FaTwitter />
+              </Link>
+              <Link to="">
+                <FaInstagram />
+              </Link>
+              <Link to="">
+                <FaWhatsapp />
+              </Link>
+            </div>
           </div>
         </div>
-      </div>
 
-      {/* <div>
+        {/* <div>
         <div className="abs_img border border-8" style={divStyle}></div>
       </div> */}
+      </div>
+
+      <div>
+        <div className="my-28 w-[75%] mx-auto">
+          <HomeButton />
+        </div>
+      </div>
     </div>
   );
 };
