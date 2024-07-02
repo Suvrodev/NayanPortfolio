@@ -1,5 +1,32 @@
 [
     {
-        "id":1
+        "id":1,
+        "title":"Web Design",
+        "desc":"Website design refers to the process of creating and designing the visual layout, user interface, and overall aesthetic appearance of a website.  Front-end development"
+    },
+    {
+        "id":2,
+        "title":"Web Development",
+        "desc":"Web development is the process of creating websites or web applications. Front-end development and Back-end development. design is user-friendly, and aligned."
+    },
+    {
+        "id":3,
+        "title":"WordPress Development",
+        "desc":"WordPress development refers to the creation of websites, themes, and plugins using the WordPress content management system. its flexibility, user-friendly, and extensive plugin."
+    },
+    {
+        "id":4,
+        "title":"Graphic Design",
+        "desc":"Graphics design is the art of visual communication, creating visually appealing and impactful designs for various mediums such as print, digital."
+    },
+    {
+        "id":5,
+        "title":"Ui Ux Design",
+        "desc":"UI UX Design combines various disciplines to create visually appealing, efficient, and user-friendly interfaces for digital products, enhancing user experiences."
+    },
+    {
+        "id":6,
+        "title":"Search Engine Optimizatio",
+        "desc":"Boost your online presence with our specialized Search Engine Optimization services (SEO). Drive traffic, improve search rankings, and increase visibility effectively."
     }
 ]
