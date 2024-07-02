@@ -89,7 +89,7 @@ const ContactBox = () => {
           </div>
           <div
             className="w-[40px] h-[40px] flex items-center justify-center rounded-md bg-[#EFB95F]"
-            onClick={"https://www.behance.net/sarkarnayans"}
+            onClick={() => goLink("https://www.behance.net/sarkarnayans")}
           >
             <FaBehance />
           </div>
