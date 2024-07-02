@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./Testimonial.css";
 import TestimonialCard from "./TestimonialCard/TestimonialCard";
+import TestimonialBox from "./TestimonialBox/TestimonialBox";
 
 const images = [
   "https://i.ibb.co/xsV2S00/Brand-3-150x150.webp",
@@ -60,30 +61,31 @@ const Testimonial = () => {
 
   return (
     <div className="">
-      <h1 className="text-2xl font-bold text-white mb-10">Testimonial</h1>
-      <div className="flex flex-col items-center justify-center">
-        <h1 className="text-3xl font-bold text-white mb-10">
-          OUR SATISFIED CUSTOMERS FEEDBACK
-        </h1>
-      </div>
+      <div>
+        <h1 className="text-2xl font-bold text-white mb-10">Testimonial</h1>
+        <div className="flex flex-col items-center justify-center">
+          <h1 className="text-3xl font-bold text-white mb-10">
+            OUR SATISFIED CUSTOMERS FEEDBACK
+          </h1>
+        </div>
 
-      <div
-        className="testimonial-container"
-        onMouseDown={handleStart}
-        onMouseMove={handleMove}
-        onMouseUp={handleEnd}
-        onMouseLeave={handleEnd}
-        onTouchStart={handleStart}
-        onTouchMove={handleMove}
-        onTouchEnd={handleEnd}
-      >
         <div
-          className="testimonial-wrapper"
-          style={{
-            transform: `translateX(-${currentIndex * 100}%)`,
-          }}
+          className="testimonial-container"
+          onMouseDown={handleStart}
+          onMouseMove={handleMove}
+          onMouseUp={handleEnd}
+          onMouseLeave={handleEnd}
+          onTouchStart={handleStart}
+          onTouchMove={handleMove}
+          onTouchEnd={handleEnd}
         >
-          {/* {images.map((image, index) => (
+          <div
+            className="testimonial-wrapper"
+            style={{
+              transform: `translateX(-${currentIndex * 100}%)`,
+            }}
+          >
+            {/* {images.map((image, index) => (
             <div key={index} className="testimonial-slide">
               <img
                 src={image}
@@ -92,13 +94,24 @@ const Testimonial = () => {
               />
             </div>
           ))} */}
+            {testimonials.map((testimonial, index) => (
+              <div key={index} className="testimonial-slide">
+                <TestimonialCard
+                  testimonial={testimonial}
+                  className="testimonial-image"
+                ></TestimonialCard>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+      <div>
+        <div className="grid grid-cols-3 gap-x-10 gap-y-24">
           {testimonials.map((testimonial, index) => (
-            <div key={index} className="testimonial-slide">
-              <TestimonialCard
-                testimonial={testimonial}
-                className="testimonial-image"
-              ></TestimonialCard>
-            </div>
+            <TestimonialBox
+              key={index}
+              testimonial={testimonial}
+            ></TestimonialBox>
           ))}
         </div>
       </div>

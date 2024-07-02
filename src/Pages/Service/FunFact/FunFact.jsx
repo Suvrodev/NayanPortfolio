@@ -23,3 +23,7 @@ const FunFact = () => {
 };
 
 export default FunFact;
+
+/**
+ * https://www.npmjs.com/package/react-countup
+ */
