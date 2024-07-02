@@ -9,7 +9,7 @@ const FunFact = () => {
       .then((data) => setFunfacts(data));
   }, []);
 
-  console.log(funFacts);
+  // console.log(funFacts);
   return (
     <div>
       <h1 className="text-2xl text-white font-bold mb-10">Fun Fact</h1>

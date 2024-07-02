@@ -1,10 +1,25 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import PriceBox from "./PriceBox";
 
 const PricingList = () => {
+  const [pricingLists, setPricingLists] = useState([]);
+  useEffect(() => {
+    fetch("./priceList.json")
+      .then((res) => res.json())
+      .then((data) => setPricingLists(data));
+  }, []);
+
+  // console.log(pricingLists);
   return (
     <div>
       <h1 className="text-2xl font-bold text-white">Pricing List</h1>
-      <div></div>
+      <div className="">
+        <div className="grid grid-cols-3 gap-5">
+          {pricingLists.map((p, idx) => (
+            <PriceBox key={idx} p={p}></PriceBox>
+          ))}
+        </div>
+      </div>
     </div>
   );
 };

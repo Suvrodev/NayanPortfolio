@@ -2,9 +2,10 @@ import React from "react";
 import CountUp from "react-countup";
 
 const FunFactBox = ({ fun }) => {
-  console.log(fun);
+  // console.log(fun);
 
   const { number, title, after, botText } = fun;
+
   return (
     <div className="flex  items-center justify-center border-[1px] text-white gap-4 p-10">
       <div className="flex flex-col gap-8">
