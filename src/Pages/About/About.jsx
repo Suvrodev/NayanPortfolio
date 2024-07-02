@@ -2,7 +2,7 @@ import React from "react";
 import "./About.css";
 import LinkBox from "../../Shared/LinkBox/LinkBox";
 
-import aboutImage from "../../assets/Nayan.jpg";
+import aboutImage from "../../assets/aboutImage/sarkar_nayan_about.jpg";
 import BioData from "./BioData/BioData";
 import DownloadCV from "./DownLoadCV/DownloadCV";
 import SkillLoading from "./SkillLoading/SkillLoading";

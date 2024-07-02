@@ -2,6 +2,7 @@ import React from "react";
 import "./Home.css";
 
 import nayanImage from "../../assets/Nayan.jpg";
+import homeImage from "../../assets/homeImage/sarkar_nayan_home.jpg";
 import {
   FaFacebookF,
   FaInstagram,
@@ -12,7 +13,7 @@ import { Link } from "react-router-dom";
 
 const Home = () => {
   const divStyle = {
-    backgroundImage: `url(${nayanImage})`,
+    backgroundImage: `url(${homeImage})`,
     // Add any other styles you need here
     width: "350px", // Example style
     height: "350px", // Example style
