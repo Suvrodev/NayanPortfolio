@@ -3,7 +3,7 @@ import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
 import PricingText from "./PricingText";
 
 const PriceBox = ({ p }) => {
-  console.log(p);
+  //   console.log(p);
   const {
     id,
     price,
@@ -19,14 +19,22 @@ const PriceBox = ({ p }) => {
     socialMediaKit,
     revisions,
     deliveryTime,
+    logoTransparency,
   } = p;
 
   let allItems = [];
   let item = {};
-  if (title) {
+  if (conceptsIncluded) {
     item = {
       title: "Concepts included",
       text: conceptsIncluded,
+    };
+    allItems.push(item);
+  }
+  if (logoTransparency) {
+    item = {
+      title: "Logo Transparency",
+      text: logoTransparency,
     };
     allItems.push(item);
   }
@@ -111,7 +119,7 @@ const PriceBox = ({ p }) => {
     allItems.push(item);
   }
 
-  console.log("All Items: ", allItems);
+  //   console.log("All Items: ", allItems);
 
   return (
     <div className="border p-5 text-white relative">

@@ -33,7 +33,7 @@
         "logoTransparency":"Yes",
         "vectorFile":"Yes",
         "threeDMockup":"Yes",
-        "sourceFile":"Yes",
+        "sourceFile":"No",
         "socialMediaKit":"NO",
         "revisions":"unlimited",
         "deliveryTime":"2 days"
