@@ -1,7 +1,7 @@
 [
     {
         "id":1,
-        "knowladge":["Bootstrap, Angular","React, Vue, Laravel","Stylus, Sass, Less","Gulp, Webpack, Grunt","Tweenmax, GSAP"],
-        "interests":["Make UI/UX Design","Create Mobile App","Site Optimization","Custom Website","Learn Ecommerce"]
+        "knowladge":["HTML, CSS, Javascript, Angular","Jquery, Bootstrap","Vue, PHP, Laravel","WordPress"],
+        "interests":["Web Design","Web Development","SUI/UX Design","Graphics Design"]
     }
 ]

@@ -22,7 +22,7 @@ const EducationExperience = () => {
     <div>
       <div className="flex text-white">
         {/* For educations */}
-        <div className="w-[50%] flex flex-col ">
+        <div className="w-[60%] flex flex-col ">
           <h1 className="text-xl font-bold text-white mb-10">Educations</h1>
           {/* TimeLineDag */}
           <div className=" flex">
@@ -38,7 +38,7 @@ const EducationExperience = () => {
         </div>
 
         {/* Experience */}
-        <div className="w-[50%] flex flex-col ">
+        <div className="w-[40%] flex flex-col ">
           {/* TimeLineDag */}
           <h1 className="text-xl font-bold text-white mb-10">Experience</h1>
           <div className="flex">

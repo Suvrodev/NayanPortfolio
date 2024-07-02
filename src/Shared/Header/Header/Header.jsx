@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import logoImage from "../../../assets/HeaderImage/Logo.png";
 
 const Header = () => {
@@ -9,7 +9,9 @@ const Header = () => {
         Sarkar Nayan
       </h1> */}
       <div className="mt-20 mb-36 ">
-        <img src={logoImage} alt="" className="w-[70%]" />
+        <Link to={"/"}>
+          <img src={logoImage} alt="" className="w-[70%]" />
+        </Link>
       </div>
 
       <div className="flex flex-col gap-4 font-bold">
@@ -53,9 +55,25 @@ const Header = () => {
           className={({ isActive }) =>
             isActive ? "text-blue-500 font-extrabold" : ""
           }
-          to="/news"
+          to="/blogs"
         >
-          News
+          Blog
+        </NavLink>
+        <NavLink
+          className={({ isActive }) =>
+            isActive ? "text-blue-500 font-extrabold" : ""
+          }
+          to="/project"
+        >
+          Project
+        </NavLink>
+        <NavLink
+          className={({ isActive }) =>
+            isActive ? "text-blue-500 font-extrabold" : ""
+          }
+          to="/gigs"
+        >
+          Gigs
         </NavLink>
 
         <NavLink

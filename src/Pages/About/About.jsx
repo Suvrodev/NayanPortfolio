@@ -31,16 +31,13 @@ const About = () => {
         <div className="dag"></div>
         <div className="text-[18px] my-10">
           <p>
-            Hi, my name is Adriano Smith and I began using WordPress when it
-            first began. I’ve spent most of my waking hours for the last ten
-            years designing, programming and operating WordPress sites.
-          </p>
-          <p>
-            One of my specialties is taking an idea from scratch and creating a
-            full-fledged platform. I go beyond to produce sites with a unique,
-            outstanding, contemporary look-and-feel. With extensive knowledge of
-            web mechanics, I’m able to optimize complex integrations to require
-            little-to-no maintenance while running on their own for years.
+            Highly motivated and detail-oriented Web Developer with a Bachelor's
+            degree in Computer Science and Engineering for 4 years. Proficient
+            in PHP, with a deep understanding of the Laravel framework. Seeking
+            to leverage my technical skills and passion for web development to
+            provide high-quality, user-centric solutions in a challenging role.
+            Committed to producing high-quality, innovative, and scalable code
+            to drive the success of your team and projects.
           </p>
         </div>
 
@@ -65,7 +62,7 @@ const About = () => {
       </div>
 
       {/* <div className="bg-[#222222] p-36"> */}
-      <div className="bg-[#222222] px-10 py-20 ">
+      <div className="bg-[#222222] px-5 py-20 ">
         <EducationExperience />
       </div>
 
