@@ -9,6 +9,7 @@ import SkillLoading from "./SkillLoading/SkillLoading";
 import KnowladgeInterest from "./KnowladgeInterest/KnowladgeInterest";
 import EducationExperience from "./EducationExperience/EducationExperience";
 import Testimonial from "./Testimonial/Testimonial";
+import WeeAccept from "../../Shared/WeeAccept/WeeAccept";
 
 const About = () => {
   return (
@@ -70,6 +71,10 @@ const About = () => {
 
       <div className=" px-10 py-20 ">
         <Testimonial />
+      </div>
+
+      <div className=" px-10 py-20 bg-white ">
+        <WeeAccept />
       </div>
     </div>
   );
