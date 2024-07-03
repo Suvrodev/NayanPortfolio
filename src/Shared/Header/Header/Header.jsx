@@ -1,6 +1,13 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
 import logoImage from "../../../assets/HeaderImage/Logo.png";
+import {
+  FaFacebookF,
+  FaInstagram,
+  FaTwitter,
+  FaWhatsapp,
+} from "react-icons/fa";
+import goLink from "../../../JS/goLink";
 
 const Header = () => {
   return (
@@ -8,7 +15,7 @@ const Header = () => {
       {/* <h1 className="text-4xl font-bold mt-20 mb-36 tracking-widest">
         Sarkar Nayan
       </h1> */}
-      <div className="mt-20 mb-36 ">
+      <div className="mt-20 mb-28 ">
         <Link to={"/"}>
           <img src={logoImage} alt="" className="w-[70%]" />
         </Link>
@@ -84,6 +91,29 @@ const Header = () => {
         >
           Contact
         </NavLink>
+      </div>
+      <div className="flex gap-4 items-center mt-8">
+        <Link
+          to=""
+          onClick={() => goLink("https://www.facebook.com/sarkarnayans")}
+        >
+          <FaFacebookF />
+        </Link>
+        <Link to="" onClick={() => goLink("https://twitter.com/sarkarnayans")}>
+          <FaTwitter />
+        </Link>
+        <Link
+          to=""
+          onClick={() => goLink("https://www.instagram.com/sarkarnayans/")}
+        >
+          <FaInstagram />
+        </Link>
+        <Link
+          to=""
+          onClick={() => goLink("https://wa.me/message/V3FSQYVKY6HQL1")}
+        >
+          <FaWhatsapp />
+        </Link>
       </div>
 
       {/* <div>

@@ -45,7 +45,7 @@ const Home = () => {
               and projects.
             </p>
             <div className="flex gap-4 items-center">
-              <Link to="">
+              {/* <Link to="">
                 <FaFacebookF />
               </Link>
               <Link to="">
@@ -56,7 +56,8 @@ const Home = () => {
               </Link>
               <Link to="">
                 <FaWhatsapp />
-              </Link>
+              </Link> */}
+              <HomeButton />
             </div>
           </div>
         </div>
@@ -67,9 +68,7 @@ const Home = () => {
       </div>
 
       <div>
-        <div className="my-28 w-[75%] mx-auto">
-          <HomeButton />
-        </div>
+        <div className="my-28 w-[75%] mx-auto">{/* <HomeButton /> */}</div>
       </div>
     </div>
   );

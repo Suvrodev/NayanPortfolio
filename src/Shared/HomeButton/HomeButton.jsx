@@ -67,13 +67,13 @@ const HomeButton = () => {
             Download CV
           </button> */}
           <button
-            className="btn btn-lg bg-black border-6 border-white text-white"
+            className="btn  bg-black border-6 border-white text-white"
             onClick={() => goLink("https://www.fiverr.com/sarkar_nayan")}
           >
             Fiver
           </button>
           <button
-            className="btn btn-lg bg-black border-6 border-white text-white"
+            className="btn  bg-black border-6 border-white text-white"
             onClick={() =>
               goLink("https://www.upwork.com/freelancers/~01f71c2421f00e1d48")
             }
@@ -81,7 +81,7 @@ const HomeButton = () => {
             Upwork
           </button>
           <button
-            className="btn btn-lg bg-black border-6 border-white text-white"
+            className="btn  bg-black border-6 border-white text-white"
             onClick={handleDownloadCV}
           >
             Download CV
