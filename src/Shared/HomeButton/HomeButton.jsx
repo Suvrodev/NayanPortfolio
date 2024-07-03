@@ -49,7 +49,7 @@ const HomeButton = () => {
         </div> */}
 
         <div className="flex gap-4 justify-center">
-          <button
+          {/* <button
             className="button-63"
             onClick={() => goLink("https://www.fiverr.com/sarkar_nayan")}
           >
@@ -64,6 +64,26 @@ const HomeButton = () => {
             Upwork
           </button>
           <button className="button-63" onClick={handleDownloadCV}>
+            Download CV
+          </button> */}
+          <button
+            className="btn btn-lg bg-black border-6 border-white text-white"
+            onClick={() => goLink("https://www.fiverr.com/sarkar_nayan")}
+          >
+            Fiver
+          </button>
+          <button
+            className="btn btn-lg bg-black border-6 border-white text-white"
+            onClick={() =>
+              goLink("https://www.upwork.com/freelancers/~01f71c2421f00e1d48")
+            }
+          >
+            Upwork
+          </button>
+          <button
+            className="btn btn-lg bg-black border-6 border-white text-white"
+            onClick={handleDownloadCV}
+          >
             Download CV
           </button>
         </div>
