@@ -4,12 +4,16 @@ import LinkBox from "../../Shared/LinkBox/LinkBox";
 import FunFact from "./FunFact/FunFact";
 import PricingList from "./PricingList/PricingList";
 import Consult from "./Consult/Consult";
+import WhatIDo from "./WhatIDo/WhatIDo";
 
 const Service = () => {
   return (
     <div className="overflow-hidden">
       <div className="pageMargin">
         <LinkBox text1={"Service"} />
+      </div>
+      <div className="pageMargin">
+        <WhatIDo />
       </div>
       <div className="p-28 bg-[#222222]">
         <TrustedClients />
