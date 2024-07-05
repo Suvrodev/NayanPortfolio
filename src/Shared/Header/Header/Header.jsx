@@ -8,6 +8,7 @@ import {
   FaWhatsapp,
 } from "react-icons/fa";
 import goLink from "../../../JS/goLink";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const Header = () => {
   return (
@@ -17,7 +18,8 @@ const Header = () => {
       </h1> */}
       <div className="mt-20 mb-28 ">
         <Link to={"/"}>
-          <img src={logoImage} alt="" className="w-[70%]" />
+          {/* <img src={logoImage} alt="" className="w-[70%]" /> */}
+          <LazyLoadImage src={logoImage} className="w-[70%]" />
         </Link>
       </div>
 
