@@ -1,10 +1,13 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
 import Header from "../../Shared/Header/Header/Header";
+import "./Main.css";
+import Cursor from "./Cursor/Cursor";
 
 const Main = () => {
   return (
     <div className="">
+      <Cursor />
       <div className="flex">
         <div className="w-[25%] ">
           <Header />
