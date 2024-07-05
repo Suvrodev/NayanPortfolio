@@ -24,8 +24,8 @@ function useEventListener(eventName, handler, element = document) {
 const Cursor = ({
   color = "255, 255, 255",
   outerAlpha = 0.4,
-  innerSize = 28,
-  outerSize = 18,
+  innerSize = 38,
+  outerSize = 18, ///Ash
   outerScale = 5,
   innerScale = 0,
   borderWidth = 10,
@@ -112,7 +112,7 @@ const Cursor = ({
       'a, input[type="submit"], input[type="image"], label[for], select, button, .link'
     );
 
-    console.log("Found clickables:", clickables); // Debug statement
+    // console.log("Found clickables:", clickables); // Debug statement
 
     clickables.forEach((el) => {
       el.style.cursor = "none";
