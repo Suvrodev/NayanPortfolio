@@ -1,5 +1,4 @@
 import React, { useRef, useState, useEffect, useCallback } from "react";
-// import "./Cursor.css";
 
 function useEventListener(eventName, handler, element = document) {
   const savedHandler = useRef();
@@ -108,26 +107,23 @@ const Cursor = ({
     }
   }, [isVisible]);
 
-  useEffect(() => {
+  const updateClickables = useCallback(() => {
     const clickables = document.querySelectorAll(
       'a, input[type="submit"], input[type="image"], label[for], select, button, .link'
     );
+
+    console.log("Found clickables:", clickables); // Debug statement
+
     clickables.forEach((el) => {
       el.style.cursor = "none";
 
-      el.addEventListener("mouseover", () => {
-        setIsActive(true);
-      });
+      el.addEventListener("mouseover", () => setIsActive(true));
       el.addEventListener("click", () => {
         setIsActive(true);
         setIsActiveClickable(false);
       });
-      el.addEventListener("mousedown", () => {
-        setIsActiveClickable(true);
-      });
-      el.addEventListener("mouseup", () => {
-        setIsActive(true);
-      });
+      el.addEventListener("mousedown", () => setIsActiveClickable(true));
+      el.addEventListener("mouseup", () => setIsActive(true));
       el.addEventListener("mouseout", () => {
         setIsActive(false);
         setIsActiveClickable(false);
@@ -136,26 +132,29 @@ const Cursor = ({
 
     return () => {
       clickables.forEach((el) => {
-        el.removeEventListener("mouseover", () => {
-          setIsActive(true);
-        });
+        el.removeEventListener("mouseover", () => setIsActive(true));
         el.removeEventListener("click", () => {
           setIsActive(true);
           setIsActiveClickable(false);
         });
-        el.removeEventListener("mousedown", () => {
-          setIsActiveClickable(true);
-        });
-        el.removeEventListener("mouseup", () => {
-          setIsActive(true);
-        });
+        el.removeEventListener("mousedown", () => setIsActiveClickable(true));
+        el.removeEventListener("mouseup", () => setIsActive(true));
         el.removeEventListener("mouseout", () => {
           setIsActive(false);
           setIsActiveClickable(false);
         });
       });
     };
-  }, [isActive]);
+  }, []);
+
+  useEffect(() => {
+    updateClickables();
+
+    const observer = new MutationObserver(() => updateClickables());
+    observer.observe(document.body, { childList: true, subtree: true });
+
+    return () => observer.disconnect();
+  }, [updateClickables]);
 
   const styles = {
     cursorInner: {

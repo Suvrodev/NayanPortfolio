@@ -6,13 +6,13 @@ import Cursor from "./Cursor/Cursor";
 
 const Main = () => {
   return (
-    <div className="">
-      <Cursor />
+    <div className="cursoranim">
       <div className="flex">
         <div className="w-[25%] ">
           <Header />
         </div>
         <div className="w-[75%] bg-[#333333]">
+          <Cursor />
           <Outlet />
         </div>
       </div>
