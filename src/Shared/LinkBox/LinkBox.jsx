@@ -4,7 +4,7 @@ import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 const LinkBox = ({ text1, text2, text3 }) => {
   return (
     <div className="">
-      <div className="bg-[#222222] p-3 text-white ">
+      <span className="bg-[#222222] p-3 text-white ">
         {text1}
         <span className={`${text2 ? "" : "hidden"}`}>
           {" "}
@@ -12,7 +12,7 @@ const LinkBox = ({ text1, text2, text3 }) => {
         </span>
         {text2}
         {text3}
-      </div>
+      </span>
     </div>
   );
 };
