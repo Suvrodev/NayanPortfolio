@@ -24,6 +24,8 @@ const PortfolioContent = () => {
       .then((res) => res.json())
       .then((data) => setPortfolios(data));
   }, []);
+  
+
 
   //   let portFolios = [];
   useEffect(() => {
@@ -38,10 +40,10 @@ const PortfolioContent = () => {
     setShowPortfolios(portFolios);
   }, [def]);
 
-  console.log("Portfolios: ", portfolios);
+  // console.log("Portfolios: ", portfolios);
   //   console.log("New Portfolios: ", portFolios);
 
-  console.log("Active Button:", activeButton);
+  // console.log("Active Button:", activeButton);
   return (
     <div>
       <div className="flex gap-6">
