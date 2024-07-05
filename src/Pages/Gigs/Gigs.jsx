@@ -3,7 +3,7 @@ import LinkBox from "../../Shared/LinkBox/LinkBox";
 import PortfolioContent from "../Portfolio/PorfolioContent/PortfolioContent";
 import GigsBox from "./GigsBox/GigsBox";
 
-const Gigs = () => {
+const Gigs = ({ pageTitle }) => {
   const [gigs, setGigs] = useState([]);
   useEffect(() => {
     fetch("./gigs.json")
@@ -14,11 +14,11 @@ const Gigs = () => {
   return (
     <div>
       <div className="m-16">
-        <LinkBox text1={"Home"} text2={"Gigs"} />
+        <LinkBox text1={"Home"} text2={pageTitle} />
       </div>
 
       <div className="m-16">
-        <h1 className="text-4xl font-bold text-white">Gigs</h1>
+        <h1 className="text-4xl font-bold text-white">{pageTitle}</h1>
         <div className="my-20">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {gigs.map((gig, idx) => (
