@@ -14,7 +14,7 @@ const Gigs = () => {
   return (
     <div>
       <div className="m-16">
-        <LinkBox text1={"Home > Gigs"} />
+        <LinkBox text1={"Home"} text2={"Gigs"} />
       </div>
 
       <div className="m-16">

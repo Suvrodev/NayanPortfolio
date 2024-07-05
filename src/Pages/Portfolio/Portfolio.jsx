@@ -6,7 +6,7 @@ const Portfolio = () => {
   return (
     <div>
       <div className="m-16">
-        <LinkBox text1={"Home > Creative portfolio"} />
+        <LinkBox text1={"Home"} text2={"Creative portfolio"} />
       </div>
 
       <div className="m-16">
