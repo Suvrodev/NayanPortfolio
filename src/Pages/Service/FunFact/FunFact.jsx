@@ -13,7 +13,7 @@ const FunFact = () => {
   return (
     <div>
       <h1 className="text-2xl text-white font-bold mb-10">Fun Fact</h1>
-      <div className="grid grid-cols-3 gap-10">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
         {funFacts.map((fun, idx) => (
           <FunFactBox key={idx} fun={fun} />
         ))}

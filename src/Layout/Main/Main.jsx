@@ -8,11 +8,13 @@ const Main = () => {
   return (
     <div className="cursoranim">
       <div className="flex">
-        <div className="w-[25%] ">
+        <div className="w-[25%] hidden md:block ">
           <Header />
         </div>
-        <div className="w-[75%] bg-[#333333]">
-          <Cursor />
+        <div className="w-full md:w-[75%] bg-[#333333]">
+          <div className="hidden md:block">
+            <Cursor />
+          </div>
           <Outlet />
         </div>
       </div>

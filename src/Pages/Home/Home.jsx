@@ -18,22 +18,22 @@ import WeeAccept from "../../Shared/WeeAccept/WeeAccept";
 const Home = () => {
   const divStyle = {
     backgroundImage: `url(${homeImage})`,
-    // Add any other styles you need here
-    width: "350px", // Example style
-    height: "350px", // Example style
-    backgroundSize: "cover", // Example style
-    backgroundPosition: "center", // Example style
+    backgroundSize: "cover",
+    backgroundPosition: "center",
   };
 
   return (
     <div>
-      <div className="flex justify-center items-center mt-60">
-        <div className="flex gap-10 w-[75%] ">
-          <div>
-            {/* <img className="w-[350px] h-[350px]" src={nayanImage} alt="" /> */}
-            <div className="abs_img  border-8" style={divStyle}></div>
+      <div className="flex justify-center items-center mt-60 w-full">
+        <div className="flex flex-col md:flex-row gap-10 w-full md:w-[75%] bg-green-500">
+          <div className="bg-red-500">
+            <div
+              className="abs_img  border-8 w-[350px] h-[350px]"
+              style={divStyle}
+            ></div>
           </div>
-          <div className="flex flex-col justify-center gap-6">
+
+          <div className="flex flex-col justify-center gap-6 bg-yellow-300">
             <h1 className="text-4xl font-bold">Sarkar Nayan</h1>
             <p className="text-[20px]">
               Highly motivated and detail-oriented Web Developer with a

@@ -15,13 +15,13 @@ const Service = () => {
       <div className="pageMargin">
         <WhatIDo />
       </div>
-      <div className="p-28 bg-[#222222]">
+      <div className="p-5 md:p-28 bg-[#222222]">
         <TrustedClients />
       </div>
       <div>
         <Consult />
       </div>
-      <div className="p-28">
+      <div className="p-5 md:p-28">
         <PricingList />
       </div>
       <div className="pageMargin">

@@ -20,16 +20,14 @@ const EducationExperience = () => {
   // console.log(experiences);
   return (
     <div>
-      <div className="flex text-white">
+      <div className="flex flex-col md:flex-row text-white ">
         {/* For educations */}
-        <div className="w-[60%] flex flex-col ">
+        <div className="w-full md:w-[60%] flex flex-col ">
           <h1 className="text-xl font-bold text-white mb-10">Educations</h1>
           {/* TimeLineDag */}
           <div className=" flex">
-            <div className="bg-white w-[1px] h-full ">
-              {/* <p className="h-auto w-[1px] bg-white"></p> */}
-            </div>
-            <div className="flex flex-col gap-10">
+            <div className="bg-white w-[2px] h-full  "></div>
+            <div className="flex flex-col gap-10 ">
               {educations.map((education, idx) => (
                 <TimeLine key={idx} education={education} />
               ))}
@@ -38,7 +36,7 @@ const EducationExperience = () => {
         </div>
 
         {/* Experience */}
-        <div className="w-[40%] flex flex-col ">
+        <div className="w-full md:w-[40%] flex flex-col ">
           {/* TimeLineDag */}
           <h1 className="text-xl font-bold text-white mb-10">Experience</h1>
           <div className="flex">

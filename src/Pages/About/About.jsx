@@ -19,7 +19,11 @@ const About = () => {
         {/* <h1 className="my-10 text-3xl text-white font-bold">About Me</h1> */}
         <h1 className="my-10 pageTitle">About Me</h1>
 
-        <img className="h-[650px] w-full" src={aboutImage} alt="" />
+        <img
+          className="h-[200px] md:h-[650px] w-full"
+          src={aboutImage}
+          alt=""
+        />
 
         <div className="my-10">
           <h1 className=" topicTitle">Sarkar Nayan</h1>
@@ -53,11 +57,11 @@ const About = () => {
         </div>
       </div>
 
-      <div className="p-28 bg-[#222222]">
+      <div className="p-5 md:p-28 bg-[#222222]">
         <SkillLoading />
       </div>
 
-      <div className="px-28 py-20">
+      <div className="p-5 md:px-28 py-20">
         <KnowladgeInterest />
       </div>
 

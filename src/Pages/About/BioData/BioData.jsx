@@ -11,7 +11,7 @@ const BioData = () => {
   const keys = Object.keys(data);
   // console.log(keys);
   return (
-    <div className="grid grid-cols-2 w-full text-white gap-x-80">
+    <div className="grid grid-cols-1 md:grid-cols-2 w-full text-white gap-x-80">
       {keys.map((k, idx) => (
         <p className="text-white  " key={idx}>
           <span className=" w-[1000px] grid grid-cols-2  ">

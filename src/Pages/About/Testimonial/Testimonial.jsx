@@ -64,13 +64,13 @@ const Testimonial = () => {
       <div>
         <h1 className="text-2xl font-bold text-white mb-10">Testimonial</h1>
         <div className="flex flex-col items-center justify-center">
-          <h1 className="text-3xl font-bold text-white mb-10">
+          <h1 className="text-2xl md:text-3xl font-bold text-white mb-10">
             OUR SATISFIED CUSTOMERS FEEDBACK
           </h1>
         </div>
 
         <div
-          className="testimonial-container"
+          className="testimonial-container  "
           onMouseDown={handleStart}
           onMouseMove={handleMove}
           onMouseUp={handleEnd}
@@ -85,15 +85,6 @@ const Testimonial = () => {
               transform: `translateX(-${currentIndex * 100}%)`,
             }}
           >
-            {/* {images.map((image, index) => (
-            <div key={index} className="testimonial-slide">
-              <img
-                src={image}
-                className="testimonial-image"
-                alt={`testimonial-${index}`}
-              />
-            </div>
-          ))} */}
             {testimonials.map((testimonial, index) => (
               <div key={index} className="testimonial-slide">
                 <TestimonialCard
@@ -105,8 +96,9 @@ const Testimonial = () => {
           </div>
         </div>
       </div>
-      <div>
-        <div className="grid grid-cols-3 gap-x-10 gap-y-24">
+
+      <div className="mt-36 md:mt-0">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-x-10 gap-y-24">
           {testimonials.map((testimonial, index) => (
             <TestimonialBox
               key={index}
