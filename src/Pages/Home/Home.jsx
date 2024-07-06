@@ -11,6 +11,9 @@ import {
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import HomeButton from "../../Shared/HomeButton/HomeButton";
+import HomeService from "./HomeService/HomeService";
+import Testimonial from "../About/Testimonial/Testimonial";
+import WeeAccept from "../../Shared/WeeAccept/WeeAccept";
 
 const Home = () => {
   const divStyle = {
@@ -33,8 +36,6 @@ const Home = () => {
           <div className="flex flex-col justify-center gap-6">
             <h1 className="text-4xl font-bold">Sarkar Nayan</h1>
             <p className="text-[20px]">
-              {/* I am a WordPress Developer at heart and create features <br /> that
-            are best suited for the job at hand. */}
               Highly motivated and detail-oriented Web Developer with a
               Bachelor's degree in Computer Science and Engineering for 4 years.
               Proficient in PHP, with a deep understanding of the Laravel
@@ -45,30 +46,20 @@ const Home = () => {
               and projects.
             </p>
             <div className="flex gap-4 items-center">
-              {/* <Link to="">
-                <FaFacebookF />
-              </Link>
-              <Link to="">
-                <FaTwitter />
-              </Link>
-              <Link to="">
-                <FaInstagram />
-              </Link>
-              <Link to="">
-                <FaWhatsapp />
-              </Link> */}
               <HomeButton />
             </div>
           </div>
         </div>
-
-        {/* <div>
-        <div className="abs_img border border-8" style={divStyle}></div>
-      </div> */}
       </div>
 
       <div>
-        <div className="my-28 w-[75%] mx-auto">{/* <HomeButton /> */}</div>
+        <div className="my-28 w-[75%] mx-auto flex flex-col gap-20">
+          <HomeService />
+          <Testimonial />
+        </div>
+        <div className="bg-white p-20">
+          <WeeAccept />
+        </div>
       </div>
     </div>
   );
