@@ -35,7 +35,7 @@ const MobileHeader = () => {
       </div>
       <div
         className={`bg-black p-2 h-auto transition-all duration-700 ease-in-out ${
-          open ? "opacity-100 max-h-screen" : "opacity-0 max-h-0"
+          open ? "opacity-100 max-h-screen" : "opacity-0 max-h-0 hidden"
         }`}
       >
         <div className="flex flex-col gap-4 font-bold ">
