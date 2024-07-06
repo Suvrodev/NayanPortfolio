@@ -17,7 +17,11 @@ const MobileHeader = () => {
       <div className="px-5 py-5 flex items-center justify-between bg-black opacity-80">
         <div>
           <Link to={"/"}>
-            <LazyLoadImage src={logoImage} className="w-[120px]" />
+            <LazyLoadImage
+              src={logoImage}
+              onClick={handlePressMenu}
+              className="w-[120px]"
+            />
           </Link>
         </div>
         <div onClick={handlePressMenu}>
