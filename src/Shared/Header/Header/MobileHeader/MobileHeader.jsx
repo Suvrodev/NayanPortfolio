@@ -36,6 +36,7 @@ const MobileHeader = () => {
       >
         <div className="flex flex-col gap-4 font-bold ">
           <NavLink
+            onClick={handlePressMenu}
             className={({ isActive }) =>
               isActive ? "text-blue-500 font-extrabold" : ""
             }
@@ -45,6 +46,7 @@ const MobileHeader = () => {
           </NavLink>
 
           <NavLink
+            onClick={handlePressMenu}
             className={({ isActive }) =>
               isActive ? "text-blue-500 font-extrabold" : ""
             }
@@ -54,6 +56,7 @@ const MobileHeader = () => {
           </NavLink>
 
           <NavLink
+            onClick={handlePressMenu}
             className={({ isActive }) =>
               isActive ? "text-blue-500 font-extrabold" : ""
             }
@@ -63,6 +66,7 @@ const MobileHeader = () => {
           </NavLink>
 
           <NavLink
+            onClick={handlePressMenu}
             className={({ isActive }) =>
               isActive ? "text-blue-500 font-extrabold" : ""
             }
@@ -72,6 +76,7 @@ const MobileHeader = () => {
           </NavLink>
 
           <NavLink
+            onClick={handlePressMenu}
             className={({ isActive }) =>
               isActive ? "text-blue-500 font-extrabold" : ""
             }
@@ -80,6 +85,7 @@ const MobileHeader = () => {
             Blog
           </NavLink>
           <NavLink
+            onClick={handlePressMenu}
             className={({ isActive }) =>
               isActive ? "text-blue-500 font-extrabold" : ""
             }
@@ -88,6 +94,7 @@ const MobileHeader = () => {
             Project
           </NavLink>
           <NavLink
+            onClick={handlePressMenu}
             className={({ isActive }) =>
               isActive ? "text-blue-500 font-extrabold" : ""
             }
@@ -97,6 +104,7 @@ const MobileHeader = () => {
           </NavLink>
 
           <NavLink
+            onClick={handlePressMenu}
             className={({ isActive }) =>
               isActive ? "text-blue-500 font-extrabold" : ""
             }
