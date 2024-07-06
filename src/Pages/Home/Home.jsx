@@ -24,16 +24,16 @@ const Home = () => {
 
   return (
     <div>
-      <div className="flex justify-center items-center mt-60 w-full">
-        <div className="flex flex-col md:flex-row gap-10 w-full md:w-[75%] bg-green-500">
-          <div className="bg-red-500">
+      <div className="flex justify-center items-center mt-10 md:mt-60 w-full p-4 md:p-0">
+        <div className="flex flex-col md:flex-row gap-10 w-full md:w-[75%] ">
+          <div className="">
             <div
-              className="abs_img  border-8 w-[350px] h-[350px]"
+              className="abs_img  border-8 w-[250px] h-[250px] md:w-[350px] md:h-[350px] mx-auto"
               style={divStyle}
             ></div>
           </div>
 
-          <div className="flex flex-col justify-center gap-6 bg-yellow-300">
+          <div className="flex flex-col justify-center gap-6 ">
             <h1 className="text-4xl font-bold">Sarkar Nayan</h1>
             <p className="text-[20px]">
               Highly motivated and detail-oriented Web Developer with a
@@ -52,8 +52,8 @@ const Home = () => {
         </div>
       </div>
 
-      <div>
-        <div className="my-28 w-[75%] mx-auto flex flex-col gap-20">
+      <div className="">
+        <div className="my-28 w-full md:w-[75%] mx-auto flex flex-col gap-20 p-4 md:p-0">
           <HomeService />
           <Testimonial />
         </div>

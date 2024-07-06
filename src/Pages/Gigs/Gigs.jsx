@@ -13,11 +13,11 @@ const Gigs = ({ pageTitle }) => {
   // console.log(gigs);
   return (
     <div>
-      <div className="m-16">
+      <div className="m-4 md:m-16">
         <LinkBox text1={"Home"} text2={pageTitle} />
       </div>
 
-      <div className="m-16">
+      <div className="m-4 md:m-16">
         <h1 className="text-4xl font-bold text-white">{pageTitle}</h1>
         <div className="my-20">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">

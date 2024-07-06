@@ -70,7 +70,7 @@ const About = () => {
         <EducationExperience />
       </div>
 
-      <div className=" px-10 py-20 ">
+      <div className="p-4 md:px-10 md:py-20 ">
         <Testimonial />
       </div>
 

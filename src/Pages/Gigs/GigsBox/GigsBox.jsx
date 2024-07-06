@@ -42,10 +42,7 @@ const GigsBox = ({ gig }) => {
             onClick={showModal}
           />
           <h1 className="text-2xl font-bold text-white">{title}</h1>
-          <button
-            className="btn bg-[#FF8080] hover:bg-[#FF8080] text-black"
-            onClick={() => goLink(link)}
-          >
+          <button className="btn  text-white" onClick={() => goLink(link)}>
             Order Now
           </button>
         </div>

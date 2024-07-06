@@ -24,8 +24,6 @@ const PortfolioContent = () => {
       .then((res) => res.json())
       .then((data) => setPortfolios(data));
   }, []);
-  
-
 
   //   let portFolios = [];
   useEffect(() => {
@@ -46,7 +44,7 @@ const PortfolioContent = () => {
   // console.log("Active Button:", activeButton);
   return (
     <div>
-      <div className="flex gap-6">
+      <div className="flex flex-wrap gap-2 md:gap-6">
         {portfolioContent.map((content, index) => (
           <button
             key={index}
