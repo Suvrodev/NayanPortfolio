@@ -1,8 +1,10 @@
 import React from "react";
 import LinkBox from "../../Shared/LinkBox/LinkBox";
 import PortfolioContent from "./PorfolioContent/PortfolioContent";
+import pageTitle from "../../JS/pageTitle";
 
 const Portfolio = () => {
+  pageTitle("Portfolio");
   return (
     <div>
       <div className="m-5 md:m-16">

@@ -2,7 +2,9 @@ import React from "react";
 import mapImage from "../../assets/Map/Map.jpg";
 import LinkBox from "../../Shared/LinkBox/LinkBox";
 import ContactBox from "./ContactBox/ContactBox";
+import pageTitle from "../../JS/pageTitle";
 const Contact = () => {
+  pageTitle("Contact");
   return (
     <div className="overflow-hidden">
       <div className="pageMargin">

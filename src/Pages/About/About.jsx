@@ -10,8 +10,10 @@ import KnowladgeInterest from "./KnowladgeInterest/KnowladgeInterest";
 import EducationExperience from "./EducationExperience/EducationExperience";
 import Testimonial from "./Testimonial/Testimonial";
 import WeeAccept from "../../Shared/WeeAccept/WeeAccept";
+import pageTitle from "../../JS/pageTitle";
 
 const About = () => {
+  pageTitle("About");
   return (
     <div className="overflow-hidden">
       <div className="pageMargin">

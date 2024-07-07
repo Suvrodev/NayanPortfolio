@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Home.css";
 
 import nayanImage from "../../assets/Nayan.jpg";
@@ -14,8 +14,11 @@ import HomeButton from "../../Shared/HomeButton/HomeButton";
 import HomeService from "./HomeService/HomeService";
 import Testimonial from "../About/Testimonial/Testimonial";
 import WeeAccept from "../../Shared/WeeAccept/WeeAccept";
+import pageTitle from "../../JS/pageTitle";
 
 const Home = () => {
+  pageTitle("Home");
+
   const divStyle = {
     backgroundImage: `url(${homeImage})`,
     backgroundSize: "cover",

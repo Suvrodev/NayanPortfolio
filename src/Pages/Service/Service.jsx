@@ -5,8 +5,10 @@ import FunFact from "./FunFact/FunFact";
 import PricingList from "./PricingList/PricingList";
 import Consult from "./Consult/Consult";
 import WhatIDo from "./WhatIDo/WhatIDo";
+import pageTitle from "../../JS/pageTitle";
 
 const Service = () => {
+  pageTitle("Service");
   return (
     <div className="overflow-hidden">
       <div className="pageMargin">
