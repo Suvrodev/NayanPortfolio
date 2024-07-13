@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import LinkBox from "../../Shared/LinkBox/LinkBox";
-import GigsBox from "../Gigs/GigsBox/GigsBox";
 import ProjectBox from "./ProjectBox/ProjectBox";
+import pageTitle from "../../JS/pageTitle";
 
 const Projects = () => {
+  pageTitle("Project");
   const [projects, setProjects] = useState([]);
   useEffect(() => {
     fetch("./project.json")
