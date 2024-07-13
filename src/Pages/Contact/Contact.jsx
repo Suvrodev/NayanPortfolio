@@ -5,6 +5,8 @@ import ContactBox from "./ContactBox/ContactBox";
 import pageTitle from "../../JS/pageTitle";
 const Contact = () => {
   pageTitle("Contact");
+
+  const newMapImage = "https://i.ibb.co/hmSk8ch/Google-Map.png";
   return (
     <div className="overflow-hidden">
       <div className="pageMargin">
@@ -14,7 +16,8 @@ const Contact = () => {
         <div className="my-20">
           <ContactBox />
         </div>
-        <img src={mapImage} alt="" />
+        {/* <img src={mapImage} alt="" /> */}
+        <img src={newMapImage} alt="" />
 
         <div className="mt-10 ">
           <form action="">
