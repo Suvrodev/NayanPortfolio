@@ -10,6 +10,7 @@ import Service from "../Pages/Service/Service";
 import Contact from "../Pages/Contact/Contact";
 import Portfolio from "../Pages/Portfolio/Portfolio";
 import Gigs from "../Pages/Gigs/Gigs";
+import Projects from "../Pages/Projects/Projects";
 
 const router = createBrowserRouter([
   {
@@ -38,11 +39,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/gigs",
-        element: <Gigs pageTitle={"Gigs"} />,
+        element: <Gigs linkTitle={"Gigs"} />,
       },
       {
         path: "/project",
-        element: <Gigs pageTitle={"Projects"} />,
+        element: <Projects />,
       },
       {
         path: "/contact",
