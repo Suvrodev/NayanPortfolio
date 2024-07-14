@@ -4,6 +4,7 @@ import Header from "../../Shared/Header/Header/Header";
 import "./Main.css";
 import Cursor from "./Cursor/Cursor";
 import MobileHeader from "../../Shared/Header/Header/MobileHeader/MobileHeader";
+import AnimatedCursor from "react-animated-cursor";
 
 const Main = () => {
   return (
@@ -15,6 +16,7 @@ const Main = () => {
         <div className="w-full md:w-[75%] bg-[#333333]">
           <div className="hidden md:block">
             <Cursor />
+            {/* <AnimatedCursor /> */}
           </div>
           <div className="md:hidden">
             <MobileHeader />

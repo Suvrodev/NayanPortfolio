@@ -11,6 +11,8 @@ import Contact from "../Pages/Contact/Contact";
 import Portfolio from "../Pages/Portfolio/Portfolio";
 import Gigs from "../Pages/Gigs/Gigs";
 import Projects from "../Pages/Projects/Projects";
+import AdminLogin from "../AdminPages/AdminLogin/AdminLogin";
+import AdminMain from "../Layout/AdminMain/AdminMain";
 
 const router = createBrowserRouter([
   {
@@ -48,6 +50,21 @@ const router = createBrowserRouter([
       {
         path: "/contact",
         element: <Contact />,
+      },
+    ],
+  },
+  // Admin Work
+  {
+    path: "admin",
+    element: <AdminMain />,
+    children: [
+      // {
+      //   path: "admin/",
+      //   element: <Navigate to="admin/login"></Navigate>,
+      // },
+      {
+        path: "login",
+        element: <AdminLogin />,
       },
     ],
   },
