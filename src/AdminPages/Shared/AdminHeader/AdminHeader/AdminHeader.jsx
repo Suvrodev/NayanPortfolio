@@ -85,7 +85,7 @@ const AdminHeader = () => {
           className={({ isActive }) =>
             isActive ? "text-blue-500 font-extrabold" : ""
           }
-          to="/contact"
+          to="/dashboard/contact"
         >
           Contact
         </NavLink>

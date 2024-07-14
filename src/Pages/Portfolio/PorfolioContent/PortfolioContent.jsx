@@ -20,7 +20,7 @@ const PortfolioContent = () => {
   const [portfolios, setPortfolios] = useState([]);
   const [showPortfolios, setShowPortfolios] = useState([]);
   useEffect(() => {
-    fetch("./portfolio.json")
+    fetch("/portfolio.json")
       .then((res) => res.json())
       .then((data) => setPortfolios(data));
   }, []);

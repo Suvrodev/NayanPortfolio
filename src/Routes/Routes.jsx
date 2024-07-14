@@ -17,6 +17,11 @@ import PrivateRoute from "./PrivateRoute";
 import AdminHome from "../AdminPages/AdminHome/AdminHome";
 import AdminAbout from "../AdminPages/AdminAbout/AdminAbout";
 import AdminService from "../AdminPages/AdminService/AdminService";
+import AdminPortfolio from "../AdminPages/AdminPortfolio/AdminPortfolio";
+import AdminProject from "../AdminPages/AdminProject/AdminProject";
+import AdminGigs from "../AdminPages/AdminGigs/AdminGigs";
+import AdminContact from "../AdminPages/AdminContact/AdminContact";
+import Blog from "../Pages/Blog/Blog";
 
 const router = createBrowserRouter([
   {
@@ -42,6 +47,10 @@ const router = createBrowserRouter([
       {
         path: "/portfolio",
         element: <Portfolio />,
+      },
+      {
+        path: "/blogs",
+        element: <Blog />,
       },
       {
         path: "/gigs",
@@ -99,7 +108,7 @@ const router = createBrowserRouter([
         path: "/dashboard/portfolio",
         element: (
           <PrivateRoute>
-            <AdminHome />
+            <AdminPortfolio />
           </PrivateRoute>
         ),
       },
@@ -115,7 +124,7 @@ const router = createBrowserRouter([
         path: "/dashboard/project",
         element: (
           <PrivateRoute>
-            <AdminHome />
+            <AdminProject />
           </PrivateRoute>
         ),
       },
@@ -123,7 +132,7 @@ const router = createBrowserRouter([
         path: "/dashboard/gigs",
         element: (
           <PrivateRoute>
-            <AdminHome />
+            <AdminGigs />
           </PrivateRoute>
         ),
       },
@@ -131,7 +140,7 @@ const router = createBrowserRouter([
         path: "/dashboard/contact",
         element: (
           <PrivateRoute>
-            <AdminHome />
+            <AdminContact />
           </PrivateRoute>
         ),
       },

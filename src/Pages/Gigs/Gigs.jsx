@@ -8,7 +8,7 @@ const Gigs = ({ linkTitle }) => {
   pageTitle(linkTitle);
   const [gigs, setGigs] = useState([]);
   useEffect(() => {
-    fetch("./gigs.json")
+    fetch("/gigs.json")
       .then((res) => res.json())
       .then((data) => setGigs(data));
   }, []);
