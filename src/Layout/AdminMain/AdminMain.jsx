@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { Outlet, useNavigate } from "react-router-dom";
 import Header from "../../Shared/Header/Header/Header";
 import MobileHeader from "../../Shared/Header/Header/MobileHeader/MobileHeader";
+import AdminHeader from "../../AdminPages/Shared/AdminHeader/AdminHeader/AdminHeader";
 
 const AdminMain = () => {
   const navigate = useNavigate("");
@@ -18,7 +19,7 @@ const AdminMain = () => {
           <Outlet />
         </div>
         <div className="w-[25%] hidden md:block ">
-          <Header />
+          <AdminHeader />
         </div>
       </div>
     </div>

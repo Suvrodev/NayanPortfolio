@@ -1,21 +1,17 @@
 import React from "react";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Link, NavLink } from "react-router-dom";
-import logoImage from "../../../assets/HeaderImage/Logo.png";
+import goLink from "../../../../JS/goLink";
+import logoImage from "../../../../assets/HeaderImage/Logo.png";
 import {
   FaFacebookF,
   FaInstagram,
   FaTwitter,
   FaWhatsapp,
 } from "react-icons/fa";
-import goLink from "../../../JS/goLink";
-import { LazyLoadImage } from "react-lazy-load-image-component";
-
-const Header = () => {
+const AdminHeader = () => {
   return (
     <div className="bg-[#222222] h-[100vh] text-white pl-16 overflow-hidden sticky top-0">
-      {/* <h1 className="text-4xl font-bold mt-20 mb-36 tracking-widest">
-        Sarkar Nayan
-      </h1> */}
       <div className="mt-20 mb-28 ">
         <Link to={"/"}>
           {/* <img src={logoImage} alt="" className="w-[70%]" /> */}
@@ -28,7 +24,7 @@ const Header = () => {
           className={({ isActive }) =>
             isActive ? "text-blue-500 font-extrabold" : ""
           }
-          to="/home"
+          to="/dashboard/home"
         >
           Home
         </NavLink>
@@ -37,7 +33,7 @@ const Header = () => {
           className={({ isActive }) =>
             isActive ? "text-blue-500 font-extrabold" : ""
           }
-          to="/about"
+          to="/dashboard/about"
         >
           About
         </NavLink>
@@ -46,7 +42,7 @@ const Header = () => {
           className={({ isActive }) =>
             isActive ? "text-blue-500 font-extrabold" : ""
           }
-          to="/service"
+          to="/dashboard/service"
         >
           Service
         </NavLink>
@@ -55,7 +51,7 @@ const Header = () => {
           className={({ isActive }) =>
             isActive ? "text-blue-500 font-extrabold" : ""
           }
-          to="/portfolio"
+          to="/dashboard/portfolio"
         >
           Portfolio
         </NavLink>
@@ -64,7 +60,7 @@ const Header = () => {
           className={({ isActive }) =>
             isActive ? "text-blue-500 font-extrabold" : ""
           }
-          to="/blogs"
+          to="/dashboard/blogs"
         >
           Blog
         </NavLink>
@@ -72,7 +68,7 @@ const Header = () => {
           className={({ isActive }) =>
             isActive ? "text-blue-500 font-extrabold" : ""
           }
-          to="/project"
+          to="/dashboard/project"
         >
           Project
         </NavLink>
@@ -80,7 +76,7 @@ const Header = () => {
           className={({ isActive }) =>
             isActive ? "text-blue-500 font-extrabold" : ""
           }
-          to="/gigs"
+          to="/dashboard/gigs"
         >
           Gigs
         </NavLink>
@@ -137,8 +133,4 @@ const Header = () => {
   );
 };
 
-export default Header;
-
-/**
- * urls: https://www.npmjs.com/package/react-lazy-load-image-component
- */
+export default AdminHeader;

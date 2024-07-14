@@ -11,7 +11,7 @@ import h from "../../../assets/trustedContact/8a.png";
 const TrustedClients = () => {
   const [imageArray, setImageArray] = useState([]);
   useEffect(() => {
-    fetch("./trusted.json")
+    fetch("/trusted.json")
       .then((res) => res.json())
       .then((data) => setImageArray(data));
   }, []);

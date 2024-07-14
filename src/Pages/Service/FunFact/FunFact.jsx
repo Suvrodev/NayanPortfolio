@@ -4,7 +4,7 @@ import FunFactBox from "./FunFactBox";
 const FunFact = () => {
   const [funFacts, setFunfacts] = useState([]);
   useEffect(() => {
-    fetch("./fucfact.json")
+    fetch("/fucfact.json")
       .then((res) => res.json())
       .then((data) => setFunfacts(data));
   }, []);

@@ -14,7 +14,7 @@ const images = [
 const Testimonial = () => {
   const [testimonials, setTestimonials] = useState([]);
   useEffect(() => {
-    fetch("./testimonial.json")
+    fetch("/testimonial.json")
       .then((res) => res.json())
       .then((data) => setTestimonials(data));
   }, []);

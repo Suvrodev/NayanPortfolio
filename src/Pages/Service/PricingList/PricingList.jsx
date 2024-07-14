@@ -4,7 +4,7 @@ import PriceBox from "./PriceBox";
 const PricingList = () => {
   const [pricingLists, setPricingLists] = useState([]);
   useEffect(() => {
-    fetch("./priceList.json")
+    fetch("/priceList.json")
       .then((res) => res.json())
       .then((data) => setPricingLists(data));
   }, []);

@@ -14,6 +14,9 @@ import Projects from "../Pages/Projects/Projects";
 import AdminLogin from "../AdminPages/AdminLogin/AdminLogin";
 import AdminMain from "../Layout/AdminMain/AdminMain";
 import PrivateRoute from "./PrivateRoute";
+import AdminHome from "../AdminPages/AdminHome/AdminHome";
+import AdminAbout from "../AdminPages/AdminAbout/AdminAbout";
+import AdminService from "../AdminPages/AdminService/AdminService";
 
 const router = createBrowserRouter([
   {
@@ -68,10 +71,70 @@ const router = createBrowserRouter([
       </PrivateRoute>
     ),
     children: [
-      // {
-      //   path: "admin/",
-      //   element: <Navigate to="admin/login"></Navigate>,
-      // },
+      {
+        path: "/dashboard/home",
+        element: (
+          <PrivateRoute>
+            <AdminHome />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/dashboard/about",
+        element: (
+          <PrivateRoute>
+            <AdminAbout />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/dashboard/service",
+        element: (
+          <PrivateRoute>
+            <AdminService />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/dashboard/portfolio",
+        element: (
+          <PrivateRoute>
+            <AdminHome />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/dashboard/blog",
+        element: (
+          <PrivateRoute>
+            <AdminHome />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/dashboard/project",
+        element: (
+          <PrivateRoute>
+            <AdminHome />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/dashboard/gigs",
+        element: (
+          <PrivateRoute>
+            <AdminHome />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/dashboard/contact",
+        element: (
+          <PrivateRoute>
+            <AdminHome />
+          </PrivateRoute>
+        ),
+      },
     ],
   },
 ]);
