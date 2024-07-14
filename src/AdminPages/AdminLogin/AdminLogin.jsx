@@ -2,15 +2,18 @@ import { useContext } from "react";
 import nayanImage from "../../assets/homeImage/sarkar_nayan_home.jpg";
 import { AuthContext } from "../../Provider/AuthProvider";
 import GoogleIcon from "@mui/icons-material/Google";
+import { useNavigate } from "react-router-dom";
 
 const AdminLogin = () => {
   const { handleLogIn } = useContext(AuthContext);
 
+  const navigate = useNavigate();
   const handleLoginGoogle = () => {
     handleLogIn()
       .then((result) => {
         const loggedUser = result.user;
-        console.log(loggedUser);
+        // console.log(loggedUser);
+        navigate("/dashboard");
       })
       .catch((error) => {
         console.log(error.message);

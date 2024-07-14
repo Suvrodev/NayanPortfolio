@@ -13,6 +13,7 @@ import Gigs from "../Pages/Gigs/Gigs";
 import Projects from "../Pages/Projects/Projects";
 import AdminLogin from "../AdminPages/AdminLogin/AdminLogin";
 import AdminMain from "../Layout/AdminMain/AdminMain";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -56,16 +57,21 @@ const router = createBrowserRouter([
   // Admin Work
   {
     path: "admin",
-    element: <AdminMain />,
+    element: <AdminLogin />,
+  },
+  {
+    path: "dashboard",
+    element: (
+      <PrivateRoute>
+        {" "}
+        <AdminMain />
+      </PrivateRoute>
+    ),
     children: [
       // {
       //   path: "admin/",
       //   element: <Navigate to="admin/login"></Navigate>,
       // },
-      {
-        path: "login",
-        element: <AdminLogin />,
-      },
     ],
   },
 ]);
