@@ -1,7 +1,17 @@
 [
-    {
-        "id":1,
-        "knowladge":["HTML, CSS, Javascript, Angular","Jquery, Bootstrap","Vue, PHP, Laravel","WordPress"],
-        "interests":["Web Design","Web Development","SUI/UX Design","Graphics Design"]
-    }
+  {
+    "id": 1,
+    "knowladge": [
+      "HTML, CSS, Javascript, Angular",
+      "Jquery, Bootstrap",
+      "Vue, PHP, Laravel",
+      "WordPress"
+    ],
+    "interests": [
+      "Web Design",
+      "Web Development",
+      "UI/UX Design",
+      "Graphics Design"
+    ]
+  }
 ]

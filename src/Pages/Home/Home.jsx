@@ -56,11 +56,13 @@ const Home = () => {
       </div>
 
       <div className="">
-        <div className="my-28 w-full md:w-[75%] mx-auto flex flex-col gap-20 p-4 md:p-0">
+        <div className="my-28 w-full  mx-auto flex flex-col gap-20 p-4 md:px-[200px] md:py-28 bg-[#222222]">
           <HomeService />
+        </div>
+        <div className="p-4 md:px-10 md:py-20 ">
           <Testimonial />
         </div>
-        <div className="bg-white p-20">
+        <div className="bg-[#222222] p-20">
           <WeeAccept />
         </div>
       </div>

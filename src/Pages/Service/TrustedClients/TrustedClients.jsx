@@ -20,7 +20,7 @@ const TrustedClients = () => {
   return (
     <div>
       <h1 className="text-2xl text-white font-bold mb-6">Trustade Clients</h1>
-      <div className="grid grid-cols-1 md:grid-cols-2">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
         {imageArray.map((img, idx) => (
           <div
             key={idx}

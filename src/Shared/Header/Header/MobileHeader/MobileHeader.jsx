@@ -54,16 +54,6 @@ const MobileHeader = () => {
             className={({ isActive }) =>
               isActive ? "text-blue-500 font-extrabold" : ""
             }
-            to="/about"
-          >
-            About
-          </NavLink>
-
-          <NavLink
-            onClick={handlePressMenu}
-            className={({ isActive }) =>
-              isActive ? "text-blue-500 font-extrabold" : ""
-            }
             to="/service"
           >
             Service
@@ -84,10 +74,21 @@ const MobileHeader = () => {
             className={({ isActive }) =>
               isActive ? "text-blue-500 font-extrabold" : ""
             }
-            to="/blogs"
+            to="/about"
           >
-            Blog
+            About
           </NavLink>
+
+          <NavLink
+            onClick={handlePressMenu}
+            className={({ isActive }) =>
+              isActive ? "text-blue-500 font-extrabold" : ""
+            }
+            to="/gigs"
+          >
+            Gigs
+          </NavLink>
+
           <NavLink
             onClick={handlePressMenu}
             className={({ isActive }) =>
@@ -97,14 +98,15 @@ const MobileHeader = () => {
           >
             Project
           </NavLink>
+
           <NavLink
             onClick={handlePressMenu}
             className={({ isActive }) =>
               isActive ? "text-blue-500 font-extrabold" : ""
             }
-            to="/gigs"
+            to="/blogs"
           >
-            Gigs
+            Blog
           </NavLink>
 
           <NavLink

@@ -7,6 +7,17 @@ import {
   FaTwitter,
   FaWhatsapp,
 } from "react-icons/fa";
+
+import FacebookIcon from "@mui/icons-material/Facebook";
+import TwitterIcon from "@mui/icons-material/Twitter";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import YouTubeIcon from "@mui/icons-material/YouTube";
+import WhatsAppIcon from "@mui/icons-material/WhatsApp";
+import PinterestIcon from "@mui/icons-material/Pinterest";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import { FaDribbble, FaBehance } from "react-icons/fa";
+
 import goLink from "../../../JS/goLink";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
@@ -37,15 +48,6 @@ const Header = () => {
           className={({ isActive }) =>
             isActive ? "text-blue-500 font-extrabold" : ""
           }
-          to="/about"
-        >
-          About
-        </NavLink>
-
-        <NavLink
-          className={({ isActive }) =>
-            isActive ? "text-blue-500 font-extrabold" : ""
-          }
           to="/service"
         >
           Service
@@ -64,18 +66,11 @@ const Header = () => {
           className={({ isActive }) =>
             isActive ? "text-blue-500 font-extrabold" : ""
           }
-          to="/blogs"
+          to="/about"
         >
-          Blog
+          About
         </NavLink>
-        <NavLink
-          className={({ isActive }) =>
-            isActive ? "text-blue-500 font-extrabold" : ""
-          }
-          to="/project"
-        >
-          Project
-        </NavLink>
+
         <NavLink
           className={({ isActive }) =>
             isActive ? "text-blue-500 font-extrabold" : ""
@@ -89,11 +84,31 @@ const Header = () => {
           className={({ isActive }) =>
             isActive ? "text-blue-500 font-extrabold" : ""
           }
+          to="/project"
+        >
+          Project
+        </NavLink>
+
+        <NavLink
+          className={({ isActive }) =>
+            isActive ? "text-blue-500 font-extrabold" : ""
+          }
+          to="/blogs"
+        >
+          Blog
+        </NavLink>
+
+        <NavLink
+          className={({ isActive }) =>
+            isActive ? "text-blue-500 font-extrabold" : ""
+          }
           to="/contact"
         >
           Contact
         </NavLink>
       </div>
+
+      {/* Icon Start */}
       <div className="flex gap-4 items-center mt-8">
         <Link
           to=""
@@ -110,6 +125,32 @@ const Header = () => {
         >
           <FaInstagram />
         </Link>
+
+        <Link
+          to=""
+          onClick={() => goLink("https://www.linkedin.com/in/sarkarnayans/")}
+        >
+          <LinkedInIcon />
+        </Link>
+        <Link to="" onClick={() => goLink("https://github.com/nayansarkars")}>
+          <GitHubIcon />
+        </Link>
+        <Link
+          to=""
+          onClick={() => goLink("https://www.behance.net/sarkarnayans")}
+        >
+          <FaBehance />
+        </Link>
+        <Link to="" onClick={() => goLink("https://dribbble.com/sarkarnayans")}>
+          <FaDribbble />
+        </Link>
+        <Link
+          to=""
+          onClick={() => goLink("https://www.pinterest.com/sarkarnayans")}
+        >
+          <PinterestIcon />
+        </Link>
+
         <Link
           to=""
           onClick={() => goLink("https://wa.me/message/V3FSQYVKY6HQL1")}
@@ -117,18 +158,20 @@ const Header = () => {
           <FaWhatsapp />
         </Link>
       </div>
+      {/* Icon end */}
 
-      {/* <div>
-        <input
-          type="text"
-          name=""
-          id=""
-          className="border border-b-1  bg-transparent mt-10"
-          placeholder="Search"
-        />
-      </div> */}
+      <div className="pt-10">
+        <p>
+          <span className="font-bold">Email: </span>{" "}
+          <span> me@sarkarnayan.com</span>
+        </p>
+        <p>
+          <span className="font-bold">Phone: </span>{" "}
+          <span> +88 01710847819</span>
+        </p>
+      </div>
 
-      <div className="mt-10">
+      <div className="mt-[20px]">
         <p>
           Copyright ©2024 Sarkar Nayan <br /> All Rights Reserved.
         </p>

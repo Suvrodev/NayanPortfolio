@@ -76,7 +76,7 @@ const About = () => {
         <Testimonial />
       </div>
 
-      <div className=" px-10 py-20 bg-white ">
+      <div className=" px-10 py-20 bg-black ">
         <WeeAccept />
       </div>
     </div>

@@ -1,9 +1,9 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import ServiceModal from "./ServiceModal/ServiceModal";
 
 const ServiceBox = ({ servcie }) => {
   const modalRef = useRef(null);
-  console.log(servcie);
+  // console.log(servcie);
   const { id, title, desc, popupDesc, image } = servcie;
 
   const showModal = () => {
@@ -11,6 +11,15 @@ const ServiceBox = ({ servcie }) => {
       modalRef.current.showModal();
     }
   };
+
+  const [showReadMore, setShowReadMore] = useState(false);
+  const readMoreShow = () => {
+    setShowReadMore(true);
+  };
+  const readMoreHide = () => {
+    setShowReadMore(false);
+  };
+  // console.log(showReadMore);
 
   return (
     <div>
@@ -27,7 +36,12 @@ const ServiceBox = ({ servcie }) => {
         </div>
       </dialog>
 
-      <div className="bg-[#222222] py-10 px-10 text-white" onClick={showModal}>
+      <div
+        className="bg-[#222222] py-10 px-10 text-white h-[450px] relative"
+        onClick={showModal}
+        onMouseEnter={readMoreShow}
+        onMouseLeave={readMoreHide}
+      >
         <div className="flex flex-col gap-4 justify-center">
           <div className="flex justify-between">
             <span className="bg-[#333333] w-[70px] h-[70px] rounded-full flex items-center justify-center font-bold text-xl ">
@@ -37,6 +51,19 @@ const ServiceBox = ({ servcie }) => {
           </div>
           <h1 className="text-2xl font-bold mt-4">{title}</h1>
           <p>{desc}</p>
+        </div>
+        <div className="py-4 absolute bottom-[50px]">
+          <div className="font-bold flex items-center gap-4">
+            <p
+              className={`${
+                showReadMore ? "block" : "hidden"
+              } overflow-hidden transition-all duration-700`}
+            >
+              {" "}
+              Read More
+            </p>{" "}
+            <p className="w-[40px] h-[2px] bg-white"></p>{" "}
+          </div>
         </div>
       </div>
     </div>
