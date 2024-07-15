@@ -23,7 +23,7 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const Header = () => {
   return (
-    <div className="bg-[#222222] h-[100vh] text-white pl-16 overflow-hidden sticky top-0">
+    <div className="bg-[#222222] h-[100vh] text-white pl-16 overflow-hidden sticky top-0 shadow-blue-400 shadow-md">
       {/* <h1 className="text-4xl font-bold mt-20 mb-36 tracking-widest">
         Sarkar Nayan
       </h1> */}
