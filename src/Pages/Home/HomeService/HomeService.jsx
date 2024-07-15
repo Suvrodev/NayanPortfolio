@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import HomeServiceBox from "./HomeServiceBox/HomeServiceBox";
+import HomeServiceDesign from "./HomeServiceDesign/HomeServiceDesign";
 
 const HomeService = () => {
   const [services, setServices] = useState([]);
@@ -11,9 +12,22 @@ const HomeService = () => {
 
   return (
     <div>
-      <div className="flex flex-col items-center justify-center gap-20 ">
+      {/* <div className="flex flex-col items-center justify-center gap-20 ">
         {services.map((service, idx) => (
-          <HomeServiceBox key={idx} service={service}></HomeServiceBox>
+          <HomeServiceBox
+            key={idx}
+            idx={idx}
+            service={service}
+          ></HomeServiceBox>
+        ))}
+      </div> */}
+      <div className="flex flex-col  justify-center  ">
+        {services.map((service, idx) => (
+          <HomeServiceDesign
+            key={idx}
+            idx={idx}
+            service={service}
+          ></HomeServiceDesign>
         ))}
       </div>
     </div>

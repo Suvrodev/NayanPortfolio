@@ -1,13 +1,15 @@
 import React from "react";
 
-const HomeServiceBox = ({ service }) => {
-  console.log(service);
+const HomeServiceBox = ({ service, idx }) => {
+  // console.log(service);
+  let cId = idx + 1;
+  // console.log("cId: ", cId);
   const { id, image, title, text } = service;
   return (
     <div className="text-white ">
       <div
         className={`flex flex-col md:flex-row gap-20 ${
-          id % 2 == 0 ? "md:flex-row-reverse" : ""
+          cId % 2 == 0 ? "md:flex-row-reverse" : ""
         }`}
       >
         <div className="w-full md:w-[50%]">
