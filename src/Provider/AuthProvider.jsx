@@ -7,6 +7,7 @@ import {
   signOut,
 } from "firebase/auth";
 import { app } from "../firebase/firebase.config";
+import Swal from "sweetalert2";
 
 export const AuthContext = createContext(null);
 const auth = getAuth(app);
@@ -56,11 +57,30 @@ const AuthProvider = ({ children }) => {
    * Check Current User end
    */
 
+  /**
+   * Successfully Toast Start
+   */
+
+  const successfullToast = (text) => {
+    Swal.fire({
+      position: "top-end",
+      icon: "success",
+      title: text,
+      showConfirmButton: false,
+      timer: 1500,
+    });
+  };
+
+  /**
+   * Successfully Toast end
+   */
+
   const authInfo = {
     user,
     loading,
     handleLogIn,
     handleLogOut,
+    successfullToast,
   };
   return (
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>

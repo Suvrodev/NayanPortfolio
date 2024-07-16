@@ -1,14 +1,35 @@
-import React from "react";
+import React, { useRef } from "react";
 import mapImage from "../../assets/Map/Map.jpg";
 import LinkBox from "../../Shared/LinkBox/LinkBox";
 import ContactBox from "./ContactBox/ContactBox";
 import pageTitle from "../../JS/pageTitle";
 import goLink from "../../JS/goLink";
+import emailjs from "@emailjs/browser";
+import SendMail from "./SendMail/SendMail";
+
 const Contact = () => {
   pageTitle("Contact");
 
   // const newMapImage = "https://i.ibb.co/hmSk8ch/Google-Map.png";
   const newMapImage = "https://i.ibb.co/r01KyRD/Google-Map.png";
+  const form = useRef();
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm("service_fup4rjf", "template_xqxicq8", form.current, {
+        publicKey: "_kzTXrFfQk2uFNUe9",
+      })
+      .then(
+        () => {
+          console.log("SUCCESS!");
+        },
+        (error) => {
+          console.log("FAILED...", error.text);
+        }
+      );
+  };
+
   return (
     <div className="overflow-hidden">
       <div className="pageMargin">
@@ -30,35 +51,8 @@ const Contact = () => {
           <img src={newMapImage} alt="" className="w-full" />
         </div>
 
-        <div className="mt-10 ">
-          <form action="">
-            <input
-              type="text"
-              name=""
-              id=""
-              className="w-full bg-transparent border p-5"
-              placeholder="Name"
-            />
-            <input
-              type="text"
-              name=""
-              id=""
-              className="w-full bg-transparent border p-5 mt-10"
-              placeholder="Email"
-            />
-
-            <textarea
-              type=""
-              name=""
-              id=""
-              className="w-full bg-transparent border p-5 h-60 mt-10"
-              placeholder="Message"
-            />
-
-            <button className="btn text-white w-[250px] mt-10 bg-[#222222] hover:bg-[#444444] border-0">
-              Send Message
-            </button>
-          </form>
+        <div className="my-10">
+          <SendMail />
         </div>
       </div>
     </div>
