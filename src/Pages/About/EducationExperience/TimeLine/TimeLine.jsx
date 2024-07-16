@@ -13,8 +13,8 @@ const TimeLine = ({ education }) => {
         <p className="bg-[#333333] py-2 px-4 rounded-2xl  md:hidden">
           {education?.year}
         </p>
-        <p className="text-xl font-bold">{education?.institute}</p>
-        <p>{education?.topic}</p>
+        <p className="text-xl font-bold c">{education?.institute}</p>
+        <p className="c">{education?.topic}</p>
       </div>
     </div>
   );

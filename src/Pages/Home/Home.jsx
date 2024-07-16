@@ -31,14 +31,16 @@ const Home = () => {
         <div className="flex flex-col md:flex-row gap-10 w-full md:w-[75%] ">
           <div className="">
             <div
-              className="abs_img  border-8 w-[250px] h-[250px] md:w-[350px] md:h-[350px] mx-auto"
+              className="abs_img  border-8 border-[#cccccc] w-[250px] h-[250px] md:w-[350px] md:h-[350px] mx-auto"
               style={divStyle}
             ></div>
           </div>
 
           <div className="flex flex-col justify-center gap-6 ">
-            <h1 className="text-4xl font-bold">Sarkar Nayan</h1>
-            <p className="text-[20px]">
+            <h1 className="text-white text-[30px]  lg:text-[55px] font-bold uppercase">
+              Sarkar Nayan
+            </h1>
+            <p className="text-[20px] c px15 f500 leading-[30px]">
               Highly motivated and detail-oriented Web Developer with a
               Bachelor's degree in Computer Science and Engineering for 4 years.
               Proficient in PHP, with a deep understanding of the Laravel

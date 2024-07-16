@@ -37,7 +37,7 @@ const Progressbar = ({ title, percentage }) => {
       {percentage && (
         <div className="md:w-[450px]">
           <div className="flex justify-between">
-            <div className="text-[18px] text-white mb-4">{title}</div>
+            <div className="text-[18px] c mb-4">{title}</div>
             <div>
               <div className="text-[18px] text-white mb-4">{percentage}%</div>
             </div>

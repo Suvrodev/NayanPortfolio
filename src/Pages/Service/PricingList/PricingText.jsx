@@ -5,7 +5,7 @@ const PricingText = ({ all }) => {
   //   console.log(all);
   const { title, text } = all;
   return (
-    <div>
+    <div className="c">
       <span>
         <ArrowRightAltIcon />
       </span>

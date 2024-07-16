@@ -24,7 +24,7 @@ const ContactBox = () => {
         <div className="mt-4">
           <img src={flag} alt="" className="w-[35px]" />
         </div>
-        <p className="text-white mt-8">
+        <p className="c mt-8">
           15/1 Bagmara Government Primary School, Khulna Sadar-9100,
           Bangladesh.​
         </p>
@@ -32,7 +32,7 @@ const ContactBox = () => {
 
       <div className="border py-8 px-6">
         <h1 className="text-2xl font-bold text-white">Contact us</h1>
-        <div className="mt-16 flex flex-col gap-2 ">
+        <div className="mt-16 flex flex-col gap-2 c">
           <h1 className="text-[18px] ">Phone : +88 01710847819</h1>
           <h1 className="text-[18px] ">Email: me@sarkarnayan.com</h1>
         </div>
@@ -40,7 +40,7 @@ const ContactBox = () => {
 
       <div className="border py-8 px-6">
         <h1 className="text-2xl font-bold text-white">Our Hours</h1>
-        <div className="mt-8 flex flex-col gap-2 ">
+        <div className="mt-8 flex  gap-2 c ">
           <h1 className="text-[18px] ">Working Time:</h1>
           <h1 className="text-[18px] ">
             Monday – Saturday from (10am to 10pm)

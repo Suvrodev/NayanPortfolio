@@ -19,7 +19,7 @@ const MobileHeader = () => {
           <Link to={"/"}>
             <LazyLoadImage
               src={logoImage}
-              onClick={handlePressMenu}
+              // onClick={handlePressMenu}
               className="w-[120px]"
             />
           </Link>

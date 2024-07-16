@@ -7,7 +7,7 @@ const FunFactBox = ({ fun }) => {
   const { number, title, after, botText } = fun;
 
   return (
-    <div className="flex  items-center justify-center border-[1px] text-white gap-4 p-10">
+    <div className="flex  items-center justify-center border-[1px] c gap-4 p-10">
       <div className="flex flex-col gap-8">
         <div className="text-2xl font-bold text-center">{title}</div>
         <div className="flex items-center justify-center gap-1 text-2xl font-bold">

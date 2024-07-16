@@ -17,7 +17,7 @@ const BioData = () => {
           <span className=" w-[1000px] grid grid-cols-2  ">
             {" "}
             <span className="font-bold">{k}:</span>{" "}
-            <span className=" relative right-[400px] ">{data[k]}</span>
+            <span className=" relative right-[400px] c ">{data[k]}</span>
           </span>
         </p>
       ))}

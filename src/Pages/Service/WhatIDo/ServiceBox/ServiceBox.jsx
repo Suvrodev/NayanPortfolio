@@ -50,7 +50,7 @@ const ServiceBox = ({ servcie }) => {
             <span></span>
           </div>
           <h1 className="text-2xl font-bold mt-4">{title}</h1>
-          <p>{desc}</p>
+          <p className="c">{desc}</p>
         </div>
         <div className="py-4 absolute bottom-[50px]">
           <div className="font-bold flex items-center gap-4">

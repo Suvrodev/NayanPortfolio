@@ -36,18 +36,14 @@ const Header = () => {
 
       <div className="flex flex-col gap-4 font-bold">
         <NavLink
-          className={({ isActive }) =>
-            isActive ? "text-blue-500 font-extrabold" : ""
-          }
+          className={({ isActive }) => (isActive ? "acLk" : "acLk ")}
           to="/home"
         >
           Home
         </NavLink>
 
         <NavLink
-          className={({ isActive }) =>
-            isActive ? "text-blue-500 font-extrabold" : ""
-          }
+          className={({ isActive }) => (isActive ? "acLk " : "lk ")}
           to="/service"
         >
           Service
@@ -55,7 +51,7 @@ const Header = () => {
 
         <NavLink
           className={({ isActive }) =>
-            isActive ? "text-blue-500 font-extrabold" : ""
+            isActive ? "acLk font-extrabold" : "lk"
           }
           to="/portfolio"
         >
@@ -64,7 +60,7 @@ const Header = () => {
 
         <NavLink
           className={({ isActive }) =>
-            isActive ? "text-blue-500 font-extrabold" : ""
+            isActive ? "acLk font-extrabold" : "lk"
           }
           to="/about"
         >
@@ -73,7 +69,7 @@ const Header = () => {
 
         <NavLink
           className={({ isActive }) =>
-            isActive ? "text-blue-500 font-extrabold" : ""
+            isActive ? "acLk font-extrabold" : "lk"
           }
           to="/gigs"
         >
@@ -82,7 +78,7 @@ const Header = () => {
 
         <NavLink
           className={({ isActive }) =>
-            isActive ? "text-blue-500 font-extrabold" : ""
+            isActive ? "acLk font-extrabold" : "lk"
           }
           to="/project"
         >
@@ -91,7 +87,7 @@ const Header = () => {
 
         <NavLink
           className={({ isActive }) =>
-            isActive ? "text-blue-500 font-extrabold" : ""
+            isActive ? "acLk font-extrabold" : "lk"
           }
           to="/blogs"
         >
@@ -100,7 +96,7 @@ const Header = () => {
 
         <NavLink
           className={({ isActive }) =>
-            isActive ? "text-blue-500 font-extrabold" : ""
+            isActive ? "acLk font-extrabold" : "lk"
           }
           to="/contact"
         >
@@ -160,7 +156,7 @@ const Header = () => {
       </div>
       {/* Icon end */}
 
-      <div className="pt-10">
+      <div className="pt-10 text-[rgb(204,204,204)] text-[15px]">
         <p>
           <span className="font-bold">Email: </span>{" "}
           <span> me@sarkarnayan.com</span>
@@ -171,7 +167,7 @@ const Header = () => {
         </p>
       </div>
 
-      <div className="mt-[20px]">
+      <div className="mt-[20px] text-[#cccccc] text-[15px]">
         <p>
           Copyright ©2024 Sarkar Nayan <br /> All Rights Reserved.
         </p>

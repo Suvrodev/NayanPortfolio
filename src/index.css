@@ -6,6 +6,26 @@ body {
   /* font-family: "Montserrat"; */
   font-family: "Montserrat", Sans-serif;
 }
+.lk {
+  color: #cccccc;
+  font-size: 15px;
+}
+.acLk {
+  color: #eeeeee;
+  font-size: 15px;
+}
+.c {
+  color: #cccccc;
+}
+.e {
+  color: #eeeeee;
+}
+.px15 {
+  font-size: 15px;
+}
+.f500 {
+  font-weight: 500;
+}
 
 /* 
 :root {

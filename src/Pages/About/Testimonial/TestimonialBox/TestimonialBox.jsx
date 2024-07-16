@@ -10,7 +10,7 @@ const TestimonialBox = ({ testimonial }) => {
       <div className="text-center text-white px-10 py-28">
         <h1>{desc}</h1>
         <h1 className=" font-bold text-2xl text-white mt-10">{name}</h1>
-        <h1 className="text-[#C72289]">{position}</h1>
+        <h1 className="text-[#cccccc]">{position}</h1>
         <Rating
           style={{ maxWidth: 100 }}
           value={rating}
