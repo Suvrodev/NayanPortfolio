@@ -23,9 +23,9 @@ const HomeServiceDesign = ({ service, idx }) => {
             ></p>
           </div>
         </div>
-        <div className={`w-[48%] hidden md:block  `}></div>
+        <div className={`w-[50%] hidden md:block  `}></div>
       </div>
-      <div className="hidden md:block w-[2px]  bg-green-400 absolute top-0 h-full left-[50%] "></div>
+      <div className="hidden md:block w-[2px]  bg-green-400 absolute top-0 h-full  left-1/2  transform -translate-x-1/2"></div>
     </div>
   );
 };
