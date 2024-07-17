@@ -1,9 +1,41 @@
-import React from "react";
+import axios from "axios";
+import React, { useContext } from "react";
+import { AuthContext } from "../../../Provider/AuthProvider";
 
 const AddProject = () => {
+  const { baseUrl, successfullToast } = useContext(AuthContext);
   const handleAddProject = (e) => {
     e.preventDefault();
-    console.log("Add Project");
+    const form = e.target;
+
+    const title = form.title.value;
+    const image = form.image.value;
+    const link = form.link.value;
+    const basic = form.basic.value;
+    const standard = form.standard.value;
+    const premium = form.premium.value;
+
+    let newProject = {
+      title,
+      image,
+      link,
+      basic: parseFloat(basic),
+      standard: parseFloat(standard),
+      premium: parseFloat(premium),
+    };
+    console.log("New Project: ", newProject);
+    axios
+      .post(`${baseUrl}/projects`, newProject, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+      .then((res) => {
+        console.log(res.data);
+        if (res.data.insertedId) {
+          successfullToast("Data added Successfully");
+        }
+      });
   };
   return (
     <div className="p-28">
@@ -50,7 +82,7 @@ const AddProject = () => {
             />
             <input
               type="number"
-              name="basic"
+              name="premium"
               id=""
               className="w-full bg-transparent border p-5 mt-10"
               placeholder="Basic Price"

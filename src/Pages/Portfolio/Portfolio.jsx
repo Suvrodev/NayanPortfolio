@@ -25,7 +25,7 @@ const Portfolio = ({ isAdmin }) => {
         </div>
 
         <div className="my-20">
-          <PortfolioContent />
+          <PortfolioContent isAdmin={isAdmin} />
         </div>
       </div>
     </div>

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
-const AddPortfolio = () => {
+
+const UpdatePortfolio = () => {
   const portfolioContent = [
     "Web Design & Development",
     "Ui/UX",
@@ -23,7 +24,7 @@ const AddPortfolio = () => {
   };
   return (
     <div className="p-28">
-      <h1 className="text-2xl text-white font-bold">Add Portfolio</h1>
+      <h1 className="text-2xl text-white font-bold">Update Portfolio</h1>
       <div className="py-10">
         <div className="w-full">
           <h1 className="text-xl text-white">Select a service</h1>
@@ -58,7 +59,7 @@ const AddPortfolio = () => {
           />
 
           <button className="btn text-white w-[250px] mt-10 bg-[#222222] hover:bg-[#444444] border-0">
-            Add Portfolio
+            Update Portfolio
           </button>
         </form>
       </div>
@@ -66,4 +67,4 @@ const AddPortfolio = () => {
   );
 };
 
-export default AddPortfolio;
+export default UpdatePortfolio;

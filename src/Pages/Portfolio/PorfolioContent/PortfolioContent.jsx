@@ -1,5 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import PortfolioBox from "../PortfolioBox/PortfolioBox";
+import axios from "axios";
+import { AuthContext } from "../../../Provider/AuthProvider";
 
 const portfolioContent = [
   "All",
@@ -9,7 +11,8 @@ const portfolioContent = [
   "Logo Design",
   "Flyer",
 ];
-const PortfolioContent = () => {
+const PortfolioContent = ({ isAdmin }) => {
+  const { baseUrl } = useContext(AuthContext);
   const [def, setDef] = useState(true);
   const [activeButton, setActiveButton] = useState("All");
   const handleButtonClick = (content) => {
@@ -20,9 +23,12 @@ const PortfolioContent = () => {
   const [portfolios, setPortfolios] = useState([]);
   const [showPortfolios, setShowPortfolios] = useState([]);
   useEffect(() => {
-    fetch("/portfolio.json")
-      .then((res) => res.json())
-      .then((data) => setPortfolios(data));
+    // fetch("/portfolio.json")
+    //   .then((res) => res.json())
+    //   .then((data) => setPortfolios(data));
+    axios.get(`${baseUrl}/portfolios`).then((res) => {
+      setPortfolios(res.data);
+    });
   }, []);
 
   //   let portFolios = [];
@@ -60,15 +66,23 @@ const PortfolioContent = () => {
       <div className="mt-10">
         <div className="">
           {showPortfolios.length > 0 ? (
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+            <div className={`grid grid-cols-1 md:grid-cols-3 gap-10 `}>
               {showPortfolios.map((portfolio, idx) => (
-                <PortfolioBox key={idx} portfolio={portfolio}></PortfolioBox>
+                <PortfolioBox
+                  key={idx}
+                  portfolio={portfolio}
+                  isAdmin={isAdmin}
+                ></PortfolioBox>
               ))}
             </div>
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+            <div className={`grid grid-cols-1 md:grid-cols-3 gap-10 `}>
               {portfolios.map((portfolio, idx) => (
-                <PortfolioBox key={idx} portfolio={portfolio}></PortfolioBox>
+                <PortfolioBox
+                  key={idx}
+                  portfolio={portfolio}
+                  isAdmin={isAdmin}
+                ></PortfolioBox>
               ))}
             </div>
           )}

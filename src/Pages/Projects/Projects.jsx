@@ -1,19 +1,23 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import LinkBox from "../../Shared/LinkBox/LinkBox";
 import ProjectBox from "./ProjectBox/ProjectBox";
 import pageTitle from "../../JS/pageTitle";
 import { Link } from "react-router-dom";
+import axios from "axios";
+import { AuthContext } from "../../Provider/AuthProvider";
 
 const Projects = ({ isAdmin }) => {
+  const { baseUrl } = useContext(AuthContext);
   pageTitle("Project");
   const [projects, setProjects] = useState([]);
+
   useEffect(() => {
-    fetch("/project.json")
-      .then((res) => res.json())
-      .then((data) => setProjects(data));
+    axios.get(`${baseUrl}/projects`).then((res) => {
+      setProjects(res.data);
+    });
   }, []);
 
-  // console.log("projects: ", projects);
+  console.log("projects: ", projects);
   return (
     <div>
       <div className="m-4 md:m-16">

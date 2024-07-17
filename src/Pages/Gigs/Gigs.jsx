@@ -1,19 +1,22 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import LinkBox from "../../Shared/LinkBox/LinkBox";
 import PortfolioContent from "../Portfolio/PorfolioContent/PortfolioContent";
 import GigsBox from "./GigsBox/GigsBox";
 import pageTitle from "../../JS/pageTitle";
 import { Link } from "react-router-dom";
+import axios from "axios";
+import { AuthContext } from "../../Provider/AuthProvider";
 
 const Gigs = ({ isAdmin }) => {
+  const { baseUrl } = useContext(AuthContext);
   pageTitle("gigs");
   const [gigs, setGigs] = useState([]);
+
   useEffect(() => {
-    fetch("/gigs.json")
-      .then((res) => res.json())
-      .then((data) => setGigs(data));
+    axios.get(`${baseUrl}/gigs`).then((res) => {
+      setGigs(res.data);
+    });
   }, []);
-  // console.log(gigs);
   return (
     <div>
       <div className="m-4 md:m-16">
@@ -31,7 +34,7 @@ const Gigs = ({ isAdmin }) => {
         <div className="my-20">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {gigs.map((gig, idx) => (
-              <GigsBox key={idx} gig={gig}></GigsBox>
+              <GigsBox key={idx} gig={gig} isAdmin={isAdmin}></GigsBox>
             ))}
           </div>
         </div>

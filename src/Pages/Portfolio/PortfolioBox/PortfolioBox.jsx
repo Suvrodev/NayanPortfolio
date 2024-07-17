@@ -1,7 +1,9 @@
 import React, { useRef, useState } from "react";
 import PortfolioModal from "../PortfolioModal/PortfolioModal";
+import DeleteIcon from "@mui/icons-material/Delete";
+import BrowserUpdatedIcon from "@mui/icons-material/BrowserUpdated";
 
-const PortfolioBox = ({ portfolio }) => {
+const PortfolioBox = ({ portfolio, isAdmin }) => {
   const modalRef = useRef(null);
   const { image, category } = portfolio;
 
@@ -31,20 +33,32 @@ const PortfolioBox = ({ portfolio }) => {
       </dialog>
 
       {/* <div onClick={() => document.getElementById("my_modal_3").showModal()}> */}
-      <div onClick={showModal}>
-        <img
-          src={image}
-          alt=""
-          className="w-[400px]"
-          onClick={() => showImage(image)}
-        />
-      </div>
-
-      {/* <div className=" modal w-full ">
-        <div className="absolute bg-purple-600 h-[450px] modal-box p-0 w-full max-w-5xl">
-          <h1>Modal</h1>
+      <div className="relative">
+        <div onClick={showModal}>
+          <img
+            src={image}
+            alt=""
+            className="w-[400px]"
+            onClick={() => showImage(image)}
+          />
         </div>
-      </div> */}
+        <div
+          className={`${
+            isAdmin ? "" : "hidden"
+          } absolute flex gap-4 right-0 bottom-0`}
+        >
+          <div className="bg-red-500 p-2 rounded-md flex justify-center text-white">
+            <button>
+              <DeleteIcon />
+            </button>
+          </div>
+          <div className="bg-green-500 p-2 rounded-md flex justify-center text-white">
+            <button>
+              <BrowserUpdatedIcon />
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

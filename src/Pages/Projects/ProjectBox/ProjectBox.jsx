@@ -5,7 +5,6 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import BrowserUpdatedIcon from "@mui/icons-material/BrowserUpdated";
 
 const ProjectBox = ({ project, isAdmin }) => {
-  console.log("is Admin: ", isAdmin);
   const modalRef = useRef(null);
   const { id, image, basic, standard, premium, title, link } = project;
 

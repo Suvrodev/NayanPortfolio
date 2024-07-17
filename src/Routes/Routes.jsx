@@ -28,6 +28,7 @@ import UpdateProject from "../Pages/Projects/UpdateProject/UpdateProject";
 import AddGigs from "../Pages/Gigs/AddGigs/AddGigs";
 import UpdateGigs from "../Pages/Gigs/UpdateGigs/UpdateGigs";
 import AddPortfolio from "../Pages/Portfolio/AddPortfolio/AddPortfolio";
+import UpdatePortfolio from "../Pages/Portfolio/UpdatePortfolio/UpdatePortfolio";
 
 const router = createBrowserRouter([
   {
@@ -123,6 +124,14 @@ const router = createBrowserRouter([
         element: (
           <PrivateRoute>
             <AddPortfolio />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/dashboard/portfolio/updateportfolio",
+        element: (
+          <PrivateRoute>
+            <UpdatePortfolio />
           </PrivateRoute>
         ),
       },
