@@ -24,6 +24,10 @@ import AdminContact from "../AdminPages/AdminContact/AdminContact";
 import Blog from "../Pages/Blog/Blog";
 import AdminBlog from "../AdminPages/AdminBlog/AdminBlog";
 import AddProject from "../Pages/Projects/AddProject/AddProject";
+import UpdateProject from "../Pages/Projects/UpdateProject/UpdateProject";
+import AddGigs from "../Pages/Gigs/AddGigs/AddGigs";
+import UpdateGigs from "../Pages/Gigs/UpdateGigs/UpdateGigs";
+import AddPortfolio from "../Pages/Portfolio/AddPortfolio/AddPortfolio";
 
 const router = createBrowserRouter([
   {
@@ -115,6 +119,14 @@ const router = createBrowserRouter([
         ),
       },
       {
+        path: "/dashboard/portfolio/addportfolio",
+        element: (
+          <PrivateRoute>
+            <AddPortfolio />
+          </PrivateRoute>
+        ),
+      },
+      {
         path: "/dashboard/blogs",
         element: (
           <PrivateRoute>
@@ -147,10 +159,34 @@ const router = createBrowserRouter([
         ),
       },
       {
+        path: "/dashboard/project/updateproject",
+        element: (
+          <PrivateRoute>
+            <UpdateProject />
+          </PrivateRoute>
+        ),
+      },
+      {
         path: "/dashboard/gigs",
         element: (
           <PrivateRoute>
             <AdminGigs />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/dashboard/gigs/addgigs",
+        element: (
+          <PrivateRoute>
+            <AddGigs />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/dashboard/gigs/updategigs",
+        element: (
+          <PrivateRoute>
+            <UpdateGigs />
           </PrivateRoute>
         ),
       },

@@ -4,7 +4,7 @@ import Portfolio from "../../Pages/Portfolio/Portfolio";
 const AdminPortfolio = () => {
   return (
     <div>
-      <Portfolio />
+      <Portfolio isAdmin={true} />
     </div>
   );
 };

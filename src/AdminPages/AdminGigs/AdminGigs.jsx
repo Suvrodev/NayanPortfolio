@@ -4,7 +4,7 @@ import Gigs from "../../Pages/Gigs/Gigs";
 const AdminGigs = () => {
   return (
     <div>
-      <Gigs />
+      <Gigs isAdmin={true} />
     </div>
   );
 };
