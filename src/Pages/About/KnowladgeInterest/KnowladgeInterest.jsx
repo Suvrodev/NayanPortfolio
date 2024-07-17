@@ -6,7 +6,7 @@ const KnowladgeInterest = () => {
   const [interests, setInterests] = useState([]);
 
   useEffect(() => {
-    fetch("./knowladgeInterests.json")
+    fetch("/knowladgeInterests.json")
       .then((res) => res.json())
       .then((data) => {
         setInterests(data[0]?.interests);

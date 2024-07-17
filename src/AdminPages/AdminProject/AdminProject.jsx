@@ -4,7 +4,7 @@ import Projects from "../../Pages/Projects/Projects";
 const AdminProject = () => {
   return (
     <div>
-      <Projects />
+      <Projects isAdmin={true} />
     </div>
   );
 };

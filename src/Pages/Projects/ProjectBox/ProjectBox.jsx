@@ -1,8 +1,11 @@
 import React, { useRef } from "react";
 import goLink from "../../../JS/goLink";
 import GigModal from "../../Gigs/GigModal/GigModal";
+import DeleteIcon from "@mui/icons-material/Delete";
+import BrowserUpdatedIcon from "@mui/icons-material/BrowserUpdated";
 
-const ProjectBox = ({ project }) => {
+const ProjectBox = ({ project, isAdmin }) => {
+  console.log("is Admin: ", isAdmin);
   const modalRef = useRef(null);
   const { id, image, basic, standard, premium, title, link } = project;
 
@@ -32,7 +35,7 @@ const ProjectBox = ({ project }) => {
         </div>
       </dialog>
 
-      <div className="border p-2 rounded-md">
+      <div className="border p-2 rounded-md  h-[420px] relative">
         <div className="flex flex-col items-center justify-center gap-5">
           <img
             src={image}
@@ -41,9 +44,27 @@ const ProjectBox = ({ project }) => {
             onClick={showModal}
           />
           <h1 className="text-2xl font-bold text-white">{title}</h1>
-          <button className="btn  text-white" onClick={() => goLink(link)}>
+        </div>
+        <div className=" absolute bottom-5 left-1/2 transform -translate-x-1/2  ">
+          <button className="btn  text-white " onClick={() => goLink(link)}>
             Order Now
           </button>
+        </div>
+        <div
+          className={`${
+            isAdmin ? "" : "hidden"
+          } absolute  flex gap-2 bottom-6 right-2`}
+        >
+          <div className="bg-red-500 p-2 rounded-md flex justify-center text-white">
+            <button>
+              <DeleteIcon />
+            </button>
+          </div>
+          <div className="bg-green-500 p-2 rounded-md flex justify-center text-white">
+            <button>
+              <BrowserUpdatedIcon />
+            </button>
+          </div>
         </div>
       </div>
     </div>

@@ -1,21 +1,29 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import nayanImage from "../../assets/homeImage/sarkar_nayan_home.jpg";
 import { AuthContext } from "../../Provider/AuthProvider";
 import GoogleIcon from "@mui/icons-material/Google";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const AdminLogin = () => {
-  const { baseUrl, successfullToast } = useContext(AuthContext);
-  const { handleLogIn } = useContext(AuthContext);
-
+  const {
+    baseUrl,
+    successfullToast,
+    handleLogIn,
+    localstorageDep,
+    setLocalStorageDep,
+  } = useContext(AuthContext);
   const navigate = useNavigate();
+
   const handleLoginGoogle = () => {
     handleLogIn()
       .then((result) => {
         const loggedUser = result.user;
+        localStorage.setItem("email", loggedUser?.email);
+        setLocalStorageDep(!localstorageDep);
+
         // console.log(loggedUser);
-        ////post data in database
+        //post data in database
         const savedUser = {
           name: loggedUser?.displayName,
           photo: loggedUser?.photoURL,
@@ -34,13 +42,10 @@ const AdminLogin = () => {
           .then((res) => res.json())
           .then((data) => {
             console.log(data);
-            // navigate(from, { replace: true });
-            ///sweet alert start
-            successfullToast("Login Successfully");
-            ///sweet alert end
-          });
 
-        navigate("/dashboard");
+            successfullToast("Login Successfully");
+            navigate("/dashboard");
+          });
       })
       .catch((error) => {
         console.log(error.message);
@@ -63,6 +68,11 @@ const AdminLogin = () => {
         >
           <GoogleIcon className="" /> Google Login
         </button>
+
+        {/* <Link to={"/dashboard"}>
+          {" "}
+          <button className="btn btn-primary">Go Dashboard</button>{" "}
+        </Link> */}
       </div>
     </div>
   );

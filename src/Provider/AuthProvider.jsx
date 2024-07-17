@@ -8,12 +8,14 @@ import {
 } from "firebase/auth";
 import { app } from "../firebase/firebase.config";
 import Swal from "sweetalert2";
+import axios from "axios";
 
 export const AuthContext = createContext(null);
 const auth = getAuth(app);
 
 const AuthProvider = ({ children }) => {
-  const [user, setUser] = useState("");
+  const [user, setUser] = useState(null);
+  const [dbUser, setDbUser] = useState("");
   const [loading, setLoading] = useState(true);
 
   const baseUrl = "http://localhost:5000";
@@ -47,16 +49,36 @@ const AuthProvider = ({ children }) => {
     const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
       setLoading(false);
-      console.log("Current User: ", currentUser);
     });
     return () => {
       return unSubscribe();
     };
   }, []);
-  //   console.log("User: ", user);
 
   /**
    * Check Current User end
+   */
+
+  /**
+   * Check db User start
+   */
+  const [localstorageDep, setLocalStorageDep] = useState(true);
+  const [mail, setMail] = useState("");
+  useEffect(() => {
+    const storedEmail = localStorage.getItem("email");
+    setMail(storedEmail);
+  }, []);
+  useEffect(() => {
+    if (mail) {
+      axios.get(`${baseUrl}/user/${mail}`).then((res) => {
+        setDbUser(res.data);
+      });
+    }
+  }, [mail]);
+  console.log("Current DB User: ", dbUser);
+
+  /**
+   * Check db User end
    */
 
   /**
@@ -80,6 +102,9 @@ const AuthProvider = ({ children }) => {
   const authInfo = {
     baseUrl,
     user,
+    dbUser,
+    localstorageDep,
+    setLocalStorageDep,
     loading,
     handleLogIn,
     handleLogOut,

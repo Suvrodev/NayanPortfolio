@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 const BioData = () => {
   const [data, setData] = useState([]);
   useEffect(() => {
-    fetch("./bioData.json")
+    fetch("/bioData.json")
       .then((res) => res.json())
       .then((data) => setData(data[0]));
   }, []);

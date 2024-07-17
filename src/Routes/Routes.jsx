@@ -23,6 +23,7 @@ import AdminGigs from "../AdminPages/AdminGigs/AdminGigs";
 import AdminContact from "../AdminPages/AdminContact/AdminContact";
 import Blog from "../Pages/Blog/Blog";
 import AdminBlog from "../AdminPages/AdminBlog/AdminBlog";
+import AddProject from "../Pages/Projects/AddProject/AddProject";
 
 const router = createBrowserRouter([
   {
@@ -134,6 +135,14 @@ const router = createBrowserRouter([
         element: (
           <PrivateRoute>
             <AdminProject />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/dashboard/project/addproject",
+        element: (
+          <PrivateRoute>
+            <AddProject />
           </PrivateRoute>
         ),
       },
