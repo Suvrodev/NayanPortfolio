@@ -16,6 +16,8 @@ const AuthProvider = ({ children }) => {
   const [user, setUser] = useState("");
   const [loading, setLoading] = useState(true);
 
+  const baseUrl = "http://localhost:5000";
+
   /**
    * Log in by gmail
    */
@@ -76,6 +78,7 @@ const AuthProvider = ({ children }) => {
    */
 
   const authInfo = {
+    baseUrl,
     user,
     loading,
     handleLogIn,

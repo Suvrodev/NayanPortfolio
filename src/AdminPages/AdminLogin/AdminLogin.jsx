@@ -3,8 +3,10 @@ import nayanImage from "../../assets/homeImage/sarkar_nayan_home.jpg";
 import { AuthContext } from "../../Provider/AuthProvider";
 import GoogleIcon from "@mui/icons-material/Google";
 import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const AdminLogin = () => {
+  const { baseUrl, successfullToast } = useContext(AuthContext);
   const { handleLogIn } = useContext(AuthContext);
 
   const navigate = useNavigate();
@@ -13,6 +15,31 @@ const AdminLogin = () => {
       .then((result) => {
         const loggedUser = result.user;
         // console.log(loggedUser);
+        ////post data in database
+        const savedUser = {
+          name: loggedUser?.displayName,
+          photo: loggedUser?.photoURL,
+          email: loggedUser?.email,
+          phone: loggedUser?.phoneNumber,
+          role: "",
+        };
+
+        fetch(`${baseUrl}/user`, {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(savedUser),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            // navigate(from, { replace: true });
+            ///sweet alert start
+            successfullToast("Login Successfully");
+            ///sweet alert end
+          });
+
         navigate("/dashboard");
       })
       .catch((error) => {

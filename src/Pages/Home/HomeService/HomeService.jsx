@@ -1,11 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import HomeServiceBox from "./HomeServiceBox/HomeServiceBox";
 import HomeServiceDesign from "./HomeServiceDesign/HomeServiceDesign";
+import { AuthContext } from "../../../Provider/AuthProvider";
 
 const HomeService = () => {
+  const { baseUrl } = useContext(AuthContext);
   const [services, setServices] = useState([]);
   useEffect(() => {
-    fetch("/homeService.json")
+    // fetch("/homeService.json")
+    fetch(`${baseUrl}/homeservice`)
       .then((res) => res.json())
       .then((data) => setServices(data));
   }, []);
