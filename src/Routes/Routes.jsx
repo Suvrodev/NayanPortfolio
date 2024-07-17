@@ -128,7 +128,7 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "/dashboard/portfolio/updateportfolio",
+        path: "/dashboard/portfolio/updateportfolio/:id",
         element: (
           <PrivateRoute>
             <UpdatePortfolio />
@@ -168,7 +168,7 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "/dashboard/project/updateproject",
+        path: "/dashboard/project/updateproject/:id",
         element: (
           <PrivateRoute>
             <UpdateProject />

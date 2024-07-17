@@ -1,17 +1,31 @@
-import React, { useRef } from "react";
+import React, { useContext, useRef } from "react";
 import goLink from "../../../JS/goLink";
 import GigModal from "../../Gigs/GigModal/GigModal";
 import DeleteIcon from "@mui/icons-material/Delete";
 import BrowserUpdatedIcon from "@mui/icons-material/BrowserUpdated";
+import axios from "axios";
+import { AuthContext } from "../../../Provider/AuthProvider";
+import { Link } from "react-router-dom";
 
-const ProjectBox = ({ project, isAdmin }) => {
+const ProjectBox = ({ project, isAdmin, setGetDep, getDep }) => {
+  const { baseUrl, successfullToast } = useContext(AuthContext);
   const modalRef = useRef(null);
-  const { id, image, basic, standard, premium, title, link } = project;
+  const { _id, image, basic, standard, premium, title, link } = project;
 
   const showModal = () => {
     if (modalRef.current) {
       modalRef.current.showModal();
     }
+  };
+
+  const handleDelete = (_id) => {
+    console.log("Delete id: ", _id);
+    axios.delete(`${baseUrl}/projects/${_id}`).then((res) => {
+      if (res.data.deletedCount > 0) {
+        successfullToast("Deleted Successfully");
+        setGetDep(!getDep);
+      }
+    });
   };
 
   return (
@@ -55,14 +69,17 @@ const ProjectBox = ({ project, isAdmin }) => {
           } absolute  flex gap-2 bottom-6 right-2`}
         >
           <div className="bg-red-500 p-2 rounded-md flex justify-center text-white">
-            <button>
+            <button onClick={() => handleDelete(_id)}>
               <DeleteIcon />
             </button>
           </div>
           <div className="bg-green-500 p-2 rounded-md flex justify-center text-white">
-            <button>
-              <BrowserUpdatedIcon />
-            </button>
+            <Link to={`updateproject/${_id}`}>
+              {" "}
+              <button>
+                <BrowserUpdatedIcon />
+              </button>
+            </Link>
           </div>
         </div>
       </div>

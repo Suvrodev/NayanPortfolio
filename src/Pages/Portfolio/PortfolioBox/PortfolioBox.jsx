@@ -48,7 +48,7 @@ const PortfolioBox = ({ portfolio, isAdmin }) => {
           } absolute flex gap-4 right-0 bottom-0`}
         >
           <div className="bg-red-500 p-2 rounded-md flex justify-center text-white">
-            <button>
+            <button onClick={() => handleDelete(_id)}>
               <DeleteIcon />
             </button>
           </div>

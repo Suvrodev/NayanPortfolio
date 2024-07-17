@@ -11,13 +11,14 @@ const Projects = ({ isAdmin }) => {
   pageTitle("Project");
   const [projects, setProjects] = useState([]);
 
+  const [getDep, setGetDep] = useState(true);
   useEffect(() => {
     axios.get(`${baseUrl}/projects`).then((res) => {
       setProjects(res.data);
     });
-  }, []);
+  }, [getDep]);
 
-  console.log("projects: ", projects);
+  // console.log("projects: ", projects);
   return (
     <div>
       <div className="m-4 md:m-16">
@@ -39,6 +40,8 @@ const Projects = ({ isAdmin }) => {
                 key={idx}
                 project={project}
                 isAdmin={isAdmin}
+                getDep={getDep}
+                setGetDep={setGetDep}
               ></ProjectBox>
             ))}
           </div>
