@@ -1,18 +1,31 @@
-import React, { useRef } from "react";
+import React, { useContext, useRef } from "react";
 import goLink from "../../../JS/goLink";
 import { FiveG } from "@mui/icons-material";
 import GigModal from "../GigModal/GigModal";
 import DeleteIcon from "@mui/icons-material/Delete";
 import BrowserUpdatedIcon from "@mui/icons-material/BrowserUpdated";
+import axios from "axios";
+import { AuthContext } from "../../../Provider/AuthProvider";
 
-const GigsBox = ({ gig, isAdmin }) => {
+const GigsBox = ({ gig, isAdmin, setGetDep, getDep }) => {
+  const { baseUrl, successfullToast } = useContext(AuthContext);
   const modalRef = useRef(null);
-  const { id, image, basic, standard, premium, title, link } = gig;
+  const { _id, image, basic, standard, premium, title, link } = gig;
 
   const showModal = () => {
     if (modalRef.current) {
       modalRef.current.showModal();
     }
+  };
+
+  const handleDelete = (_id) => {
+    console.log("Delete id: ", _id);
+    axios.delete(`${baseUrl}/gigs/${_id}`).then((res) => {
+      if (res.data.deletedCount > 0) {
+        successfullToast("Deleted Successfully");
+        setGetDep(!getDep);
+      }
+    });
   };
 
   return (
@@ -56,7 +69,7 @@ const GigsBox = ({ gig, isAdmin }) => {
           } absolute  flex gap-2 bottom-6 right-2`}
         >
           <div className="bg-red-500 p-2 rounded-md flex justify-center text-white">
-            <button>
+            <button onClick={() => handleDelete(_id)}>
               <DeleteIcon />
             </button>
           </div>

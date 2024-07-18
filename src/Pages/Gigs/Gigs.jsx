@@ -10,13 +10,14 @@ import { AuthContext } from "../../Provider/AuthProvider";
 const Gigs = ({ isAdmin }) => {
   const { baseUrl } = useContext(AuthContext);
   pageTitle("gigs");
-  const [gigs, setGigs] = useState([]);
 
+  const [getDep, setGetDep] = useState(true);
+  const [gigs, setGigs] = useState([]);
   useEffect(() => {
     axios.get(`${baseUrl}/gigs`).then((res) => {
       setGigs(res.data);
     });
-  }, []);
+  }, [getDep]);
   return (
     <div>
       <div className="m-4 md:m-16">
@@ -34,7 +35,13 @@ const Gigs = ({ isAdmin }) => {
         <div className="my-20">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {gigs.map((gig, idx) => (
-              <GigsBox key={idx} gig={gig} isAdmin={isAdmin}></GigsBox>
+              <GigsBox
+                key={idx}
+                gig={gig}
+                isAdmin={isAdmin}
+                getDep={getDep}
+                setGetDep={setGetDep}
+              ></GigsBox>
             ))}
           </div>
         </div>

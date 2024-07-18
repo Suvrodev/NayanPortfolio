@@ -33,7 +33,7 @@ const AddProject = () => {
       .then((res) => {
         console.log(res.data);
         if (res.data.insertedId) {
-          successfullToast("Data added Successfully");
+          successfullToast("Project added Successfully");
         }
       });
   };

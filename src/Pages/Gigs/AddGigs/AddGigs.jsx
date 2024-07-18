@@ -1,9 +1,41 @@
-import React from "react";
+import axios from "axios";
+import React, { useContext } from "react";
+import { AuthContext } from "../../../Provider/AuthProvider";
 
 const AddGigs = () => {
+  const { successfullToast, baseUrl } = useContext(AuthContext);
   const handleAddGigs = (e) => {
     e.preventDefault();
-    console.log("Add Gigs");
+    const form = e.target;
+
+    const title = form.title.value;
+    const image = form.image.value;
+    const link = form.link.value;
+    const basic = form.basic.value;
+    const standard = form.standard.value;
+    const premium = form.premium.value;
+
+    let newGig = {
+      title,
+      image,
+      link,
+      basic: parseFloat(basic),
+      standard: parseFloat(standard),
+      premium: parseFloat(premium),
+    };
+    console.log("New Gigs: ", newGig);
+    axios
+      .post(`${baseUrl}/gigs`, newGig, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+      .then((res) => {
+        console.log(res.data);
+        if (res.data.insertedId) {
+          successfullToast("Gigs added Successfully");
+        }
+      });
   };
   return (
     <div className="p-28">
@@ -14,7 +46,7 @@ const AddGigs = () => {
             type="text"
             name="title"
             id=""
-            className="w-full bg-transparent border p-5"
+            className="w-full bg-transparent border p-5 text-white"
             placeholder="Title"
           />
 
@@ -22,7 +54,7 @@ const AddGigs = () => {
             type="url"
             name="image"
             id=""
-            className="w-full bg-transparent border p-5 mt-10"
+            className="w-full bg-transparent border p-5 mt-10 text-white"
             placeholder="Image url"
           />
 
@@ -30,7 +62,7 @@ const AddGigs = () => {
             type="url"
             name="link"
             id=""
-            className="w-full bg-transparent border p-5 mt-10"
+            className="w-full bg-transparent border p-5 mt-10  text-white"
             placeholder="Order Link"
           />
           <div className="flex gap-5">
@@ -38,22 +70,22 @@ const AddGigs = () => {
               type="number"
               name="basic"
               id=""
-              className="w-full bg-transparent border p-5 mt-10"
+              className="w-full bg-transparent border p-5 mt-10  text-white"
               placeholder="Basic Price"
             />
             <input
               type="number"
               name="standard"
               id=""
-              className="w-full bg-transparent border p-5 mt-10"
+              className="w-full bg-transparent border p-5 mt-10  text-white"
               placeholder="Basic Price"
             />
             <input
               type="number"
-              name="basic"
+              name="premium"
               id=""
-              className="w-full bg-transparent border p-5 mt-10"
-              placeholder="Basic Price"
+              className="w-full bg-transparent border p-5 mt-10  text-white"
+              placeholder="Premium Price"
             />
           </div>
           <button className="btn text-white w-[250px] mt-10 bg-[#222222] hover:bg-[#444444] border-0">
