@@ -1,31 +1,69 @@
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
+import { AuthContext } from "../../../Provider/AuthProvider";
+import { useLocation, useParams } from "react-router-dom";
+import axios from "axios";
+
+const portfolioContent = [
+  "Web Design & Development",
+  "Ui/UX",
+  "Business Card",
+  "Logo Design",
+  "Flyer",
+];
 
 const UpdatePortfolio = () => {
-  const portfolioContent = [
-    "Web Design & Development",
-    "Ui/UX",
-    "Business Card",
-    "Logo Design",
-    "Flyer",
-  ];
+  const { baseUrl, successfullToast } = useContext(AuthContext);
+  const { id } = useParams();
+  const location = useLocation();
+  const { category } = location.state || {};
 
-  const [selected, setSelected] = useState("");
+  const [portfolio, setPortfolio] = useState("");
+  useEffect(() => {
+    axios
+      .get(`${baseUrl}/portfolios/${id}`)
+      .then((res) => setPortfolio(res.data));
+  }, []);
+  // console.log("Portfolio: ", portfolio);
+
+  const [selected, setSelected] = useState(category);
 
   const handleChange = (event) => {
     const value = event.target.value;
     setSelected(value);
-    console.log(value);
   };
 
-  const handleAddPortfolio = (e) => {
+  const handleUpdatePortfolio = (e) => {
     e.preventDefault();
-    console.log("Add Portfolio");
+
+    const form = e.target;
+    const category = selected;
+    const image = form.image.value;
+
+    let newPortfolio = { category, image };
+    console.log("New Portfolio: ", newPortfolio);
+
+    axios
+      .patch(`${baseUrl}/portfolios/${id}`, newPortfolio, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+      .then((res) => {
+        console.log(res.data);
+        if (res.data.modifiedCount > 0) {
+          successfullToast("Portfolio updated Successfully");
+        }
+      });
   };
   return (
     <div className="p-28">
       <h1 className="text-2xl text-white font-bold">Update Portfolio</h1>
       <div className="py-10">
+        <div className="flex justify-center mb-10">
+          <img src={portfolio?.image} alt="" className="w-[450px] h-[320px]" />
+        </div>
+
         <div className="w-full">
           <h1 className="text-xl text-white">Select a service</h1>
           <div className="relative">
@@ -49,13 +87,14 @@ const UpdatePortfolio = () => {
           </div>
         </div>
 
-        <form onSubmit={handleAddPortfolio}>
+        <form onSubmit={handleUpdatePortfolio}>
           <input
             type="url"
             name="image"
             id=""
             className="w-full bg-transparent border p-5 mt-10"
             placeholder="Image url"
+            defaultValue={portfolio?.image}
           />
 
           <button className="btn text-white w-[250px] mt-10 bg-[#222222] hover:bg-[#444444] border-0">

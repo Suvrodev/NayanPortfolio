@@ -1,25 +1,47 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
+import { AuthContext } from "../../../Provider/AuthProvider";
+import axios from "axios";
+
+const portfolioContent = [
+  "Web Design & Development",
+  "Ui/UX",
+  "Business Card",
+  "Logo Design",
+  "Flyer",
+];
+
 const AddPortfolio = () => {
-  const portfolioContent = [
-    "Web Design & Development",
-    "Ui/UX",
-    "Business Card",
-    "Logo Design",
-    "Flyer",
-  ];
+  const { successfullToast, baseUrl } = useContext(AuthContext);
 
-  const [selected, setSelected] = useState("");
-
+  const [selected, setSelected] = useState("Web Design & Development");
   const handleChange = (event) => {
     const value = event.target.value;
     setSelected(value);
-    console.log(value);
   };
+  // console.log("Category: ", selected);
 
   const handleAddPortfolio = (e) => {
     e.preventDefault();
-    console.log("Add Portfolio");
+    const form = e.target;
+
+    const category = selected;
+    const image = form.image.value;
+
+    let newPortfolio = { category, image };
+    console.log("New Portfolio: ", newPortfolio);
+    axios
+      .post(`${baseUrl}/portfolios`, newPortfolio, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+      .then((res) => {
+        console.log(res.data);
+        if (res.data.insertedId) {
+          successfullToast("Portfolio added Successfully");
+        }
+      });
   };
   return (
     <div className="p-28">
@@ -53,7 +75,7 @@ const AddPortfolio = () => {
             type="url"
             name="image"
             id=""
-            className="w-full bg-transparent border p-5 mt-10"
+            className="w-full bg-transparent border p-5 mt-10 text-white"
             placeholder="Image url"
           />
 

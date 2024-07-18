@@ -1,14 +1,29 @@
-import React, { useRef, useState } from "react";
+import React, { useContext, useRef, useState } from "react";
 import PortfolioModal from "../PortfolioModal/PortfolioModal";
 import DeleteIcon from "@mui/icons-material/Delete";
 import BrowserUpdatedIcon from "@mui/icons-material/BrowserUpdated";
+import { AuthContext } from "../../../Provider/AuthProvider";
+import axios from "axios";
+import { Link, useNavigate } from "react-router-dom";
 
-const PortfolioBox = ({ portfolio, isAdmin }) => {
+const PortfolioBox = ({ portfolio, isAdmin, setGetDep, getDep }) => {
+  const { baseUrl, successfullToast } = useContext(AuthContext);
   const modalRef = useRef(null);
-  const { image, category } = portfolio;
+  const { _id, image, category } = portfolio;
 
-  const showImage = (image) => {
-    console.log("Box Image:", image);
+  const handleDelete = (_id) => {
+    console.log("Delete id: ", _id);
+    axios.delete(`${baseUrl}/portfolios/${_id}`).then((res) => {
+      if (res.data.deletedCount > 0) {
+        successfullToast("Deleted Successfully");
+        setGetDep(!getDep);
+      }
+    });
+  };
+
+  const navigate = useNavigate();
+  const goInUpdate = (_id, category) => {
+    navigate(`updateportfolio/${_id}`, { state: { category } });
   };
 
   const showModal = () => {
@@ -35,12 +50,7 @@ const PortfolioBox = ({ portfolio, isAdmin }) => {
       {/* <div onClick={() => document.getElementById("my_modal_3").showModal()}> */}
       <div className="relative">
         <div onClick={showModal}>
-          <img
-            src={image}
-            alt=""
-            className="w-[400px]"
-            onClick={() => showImage(image)}
-          />
+          <img src={image} alt="" className="w-[400px]" />
         </div>
         <div
           className={`${
@@ -53,7 +63,7 @@ const PortfolioBox = ({ portfolio, isAdmin }) => {
             </button>
           </div>
           <div className="bg-green-500 p-2 rounded-md flex justify-center text-white">
-            <button>
+            <button onClick={() => goInUpdate(_id, category)}>
               <BrowserUpdatedIcon />
             </button>
           </div>

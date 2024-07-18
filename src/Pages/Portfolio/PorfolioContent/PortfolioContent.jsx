@@ -22,14 +22,12 @@ const PortfolioContent = ({ isAdmin }) => {
 
   const [portfolios, setPortfolios] = useState([]);
   const [showPortfolios, setShowPortfolios] = useState([]);
+  const [getDep, setGetDep] = useState(true);
   useEffect(() => {
-    // fetch("/portfolio.json")
-    //   .then((res) => res.json())
-    //   .then((data) => setPortfolios(data));
     axios.get(`${baseUrl}/portfolios`).then((res) => {
       setPortfolios(res.data);
     });
-  }, []);
+  }, [getDep]);
 
   //   let portFolios = [];
   useEffect(() => {
@@ -42,7 +40,7 @@ const PortfolioContent = ({ isAdmin }) => {
       (port) => port.category == activeButton
     );
     setShowPortfolios(portFolios);
-  }, [def]);
+  }, [def, getDep]);
 
   // console.log("Portfolios: ", portfolios);
   //   console.log("New Portfolios: ", portFolios);
@@ -72,6 +70,8 @@ const PortfolioContent = ({ isAdmin }) => {
                   key={idx}
                   portfolio={portfolio}
                   isAdmin={isAdmin}
+                  getDep={getDep}
+                  setGetDep={setGetDep}
                 ></PortfolioBox>
               ))}
             </div>
@@ -82,6 +82,8 @@ const PortfolioContent = ({ isAdmin }) => {
                   key={idx}
                   portfolio={portfolio}
                   isAdmin={isAdmin}
+                  getDep={getDep}
+                  setGetDep={setGetDep}
                 ></PortfolioBox>
               ))}
             </div>
