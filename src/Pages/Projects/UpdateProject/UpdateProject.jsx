@@ -42,7 +42,7 @@ const UpdateProject = () => {
       .then((res) => {
         console.log(res.data);
         if (res.data.modifiedCount > 0) {
-          successfullToast("Data updated Successfully");
+          successfullToast("Project updated Successfully");
         }
       });
   };

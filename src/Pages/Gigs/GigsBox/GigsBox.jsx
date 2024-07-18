@@ -6,6 +6,7 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import BrowserUpdatedIcon from "@mui/icons-material/BrowserUpdated";
 import axios from "axios";
 import { AuthContext } from "../../../Provider/AuthProvider";
+import { Link } from "react-router-dom";
 
 const GigsBox = ({ gig, isAdmin, setGetDep, getDep }) => {
   const { baseUrl, successfullToast } = useContext(AuthContext);
@@ -74,9 +75,11 @@ const GigsBox = ({ gig, isAdmin, setGetDep, getDep }) => {
             </button>
           </div>
           <div className="bg-green-500 p-2 rounded-md flex justify-center text-white">
-            <button>
-              <BrowserUpdatedIcon />
-            </button>
+            <Link to={`updategigs/${_id}`}>
+              <button>
+                <BrowserUpdatedIcon />
+              </button>
+            </Link>
           </div>
         </div>
       </div>

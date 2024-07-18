@@ -192,7 +192,7 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "/dashboard/gigs/updategigs",
+        path: "/dashboard/gigs/updategigs/:id",
         element: (
           <PrivateRoute>
             <UpdateGigs />
