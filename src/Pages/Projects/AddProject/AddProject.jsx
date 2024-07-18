@@ -46,7 +46,7 @@ const AddProject = () => {
             type="text"
             name="title"
             id=""
-            className="w-full bg-transparent border p-5"
+            className="w-full bg-transparent border p-5 text-white"
             placeholder="Title"
           />
 
@@ -54,7 +54,7 @@ const AddProject = () => {
             type="url"
             name="image"
             id=""
-            className="w-full bg-transparent border p-5 mt-10"
+            className="w-full bg-transparent border p-5 mt-10 text-white"
             placeholder="Image url"
           />
 
@@ -62,7 +62,7 @@ const AddProject = () => {
             type="url"
             name="link"
             id=""
-            className="w-full bg-transparent border p-5 mt-10"
+            className="w-full bg-transparent border p-5 mt-10 text-white"
             placeholder="Order Link"
           />
           <div className="flex gap-5">
@@ -70,21 +70,21 @@ const AddProject = () => {
               type="number"
               name="basic"
               id=""
-              className="w-full bg-transparent border p-5 mt-10"
+              className="w-full bg-transparent border p-5 mt-10 text-white"
               placeholder="Basic Price"
             />
             <input
               type="number"
               name="standard"
               id=""
-              className="w-full bg-transparent border p-5 mt-10"
-              placeholder="Basic Price"
+              className="w-full bg-transparent border p-5 mt-10 text-white"
+              placeholder="Standard Price"
             />
             <input
               type="number"
               name="premium"
               id=""
-              className="w-full bg-transparent border p-5 mt-10"
+              className="w-full bg-transparent border p-5 mt-10 text-white"
               placeholder="Basic Price"
             />
           </div>
