@@ -30,6 +30,7 @@ import UpdateGigs from "../Pages/Gigs/UpdateGigs/UpdateGigs";
 import AddPortfolio from "../Pages/Portfolio/AddPortfolio/AddPortfolio";
 import UpdatePortfolio from "../Pages/Portfolio/UpdatePortfolio/UpdatePortfolio";
 import AddService from "../Pages/Service/WhatIDo/AddService/AddService";
+import UpdateService from "../Pages/Service/WhatIDo/UpdateService/UpdateService";
 
 const router = createBrowserRouter([
   {
@@ -117,6 +118,14 @@ const router = createBrowserRouter([
         element: (
           <PrivateRoute>
             <AddService />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/dashboard/service/updateservice/:id",
+        element: (
+          <PrivateRoute>
+            <UpdateService />
           </PrivateRoute>
         ),
       },

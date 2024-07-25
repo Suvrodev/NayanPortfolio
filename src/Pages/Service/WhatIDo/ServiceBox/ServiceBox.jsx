@@ -94,7 +94,7 @@ const ServiceBox = ({ servcie, isAdmin, idx, getDep, setGetDep }) => {
             </button>
           </div>
           <div className="bg-green-500 p-2 rounded-md flex justify-center text-white">
-            <Link to={`updateproject/${_id}`}>
+            <Link to={`updateservice/${_id}`}>
               {" "}
               <button>
                 <BrowserUpdatedIcon />
