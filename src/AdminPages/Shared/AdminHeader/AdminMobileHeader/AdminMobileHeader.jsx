@@ -1,15 +1,24 @@
 import logoImage from "../../../../assets/HeaderImage/Logo.png";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { AuthContext } from "../../../../Provider/AuthProvider";
 
 const AdminMobileHeader = () => {
+  const { handleLogOut } = useContext(AuthContext);
   const [open, setOpen] = useState(false);
 
   const handlePressMenu = () => {
     setOpen(!open);
+  };
+
+  const navigate = useNavigate();
+  const handleLogout_ = () => {
+    localStorage.removeItem("email");
+    handleLogOut;
+    navigate("/");
   };
 
   return (
@@ -118,6 +127,10 @@ const AdminMobileHeader = () => {
           >
             Contact
           </NavLink>
+
+          <h1 onClick={handleLogout_} className="cursor-pointer">
+            Logout
+          </h1>
         </div>
       </div>
     </div>
