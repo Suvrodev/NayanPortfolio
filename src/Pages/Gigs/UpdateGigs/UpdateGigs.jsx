@@ -86,7 +86,7 @@ const UpdateGigs = () => {
               type="number"
               name="basic"
               id=""
-              className="w-full bg-transparent border p-5 mt-10  text-white"
+              className="w-full bg-transparent border p-5 mt-10  text-white numberInputUpDown"
               placeholder="Basic Price"
               defaultValue={gigs?.basic}
             />
@@ -94,7 +94,7 @@ const UpdateGigs = () => {
               type="number"
               name="standard"
               id=""
-              className="w-full bg-transparent border p-5 mt-10  text-white"
+              className="w-full bg-transparent border p-5 mt-10  text-white numberInputUpDown"
               placeholder="Basic Price"
               defaultValue={gigs?.standard}
             />
@@ -102,7 +102,7 @@ const UpdateGigs = () => {
               type="number"
               name="premium"
               id=""
-              className="w-full bg-transparent border p-5 mt-10  text-white"
+              className="w-full bg-transparent border p-5 mt-10  text-white numberInputUpDown"
               placeholder="Premium Price"
               defaultValue={gigs?.premium}
             />

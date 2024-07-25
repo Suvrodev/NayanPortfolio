@@ -1,5 +1,7 @@
 import axios from "axios";
 import React, { useContext } from "react";
+import "./AddProject.css";
+
 import { AuthContext } from "../../../Provider/AuthProvider";
 
 const AddProject = () => {
@@ -70,21 +72,21 @@ const AddProject = () => {
               type="number"
               name="basic"
               id=""
-              className="w-full bg-transparent border p-5 mt-10 text-white"
+              className="w-full bg-transparent border p-5 mt-10 text-white numberInputUpDown"
               placeholder="Basic Price"
             />
             <input
               type="number"
               name="standard"
               id=""
-              className="w-full bg-transparent border p-5 mt-10 text-white"
+              className="w-full bg-transparent border p-5 mt-10 text-white numberInputUpDown"
               placeholder="Standard Price"
             />
             <input
               type="number"
               name="premium"
               id=""
-              className="w-full bg-transparent border p-5 mt-10 text-white"
+              className="w-full bg-transparent border p-5 mt-10 text-white numberInputUpDown"
               placeholder="Basic Price"
             />
           </div>

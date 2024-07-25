@@ -70,21 +70,21 @@ const AddGigs = () => {
               type="number"
               name="basic"
               id=""
-              className="w-full bg-transparent border p-5 mt-10  text-white"
+              className="w-full bg-transparent border p-5 mt-10  text-white numberInputUpDown"
               placeholder="Basic Price"
             />
             <input
               type="number"
               name="standard"
               id=""
-              className="w-full bg-transparent border p-5 mt-10  text-white"
+              className="w-full bg-transparent border p-5 mt-10  text-white numberInputUpDown"
               placeholder="Basic Price"
             />
             <input
               type="number"
               name="premium"
               id=""
-              className="w-full bg-transparent border p-5 mt-10  text-white"
+              className="w-full bg-transparent border p-5 mt-10  text-white numberInputUpDown"
               placeholder="Premium Price"
             />
           </div>

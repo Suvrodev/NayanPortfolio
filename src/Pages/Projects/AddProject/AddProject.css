@@ -1,0 +1,8 @@
+.numberInputUpDown::-webkit-inner-spin-button,
+.numberInputUpDown::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  /* margin: 0; */
+}
+/* .numberInputUpDown {
+  -moz-appearance: textfield;
+} */
