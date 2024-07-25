@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useContext } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import goLink from "../../../../JS/goLink";
 import logoImage from "../../../../assets/HeaderImage/Logo.png";
 import {
@@ -9,7 +9,16 @@ import {
   FaTwitter,
   FaWhatsapp,
 } from "react-icons/fa";
+import { AuthContext } from "../../../../Provider/AuthProvider";
 const AdminHeader = () => {
+  const { handleLogOut } = useContext(AuthContext);
+
+  const navigate = useNavigate();
+  const handleLogout_ = () => {
+    localStorage.removeItem("email");
+    handleLogOut;
+    navigate("/");
+  };
   return (
     <div className="bg-[#222222] h-[100vh] text-white pl-16 overflow-hidden sticky top-0">
       <div className="mt-20 mb-28 ">
@@ -89,6 +98,10 @@ const AdminHeader = () => {
         >
           Contact
         </NavLink>
+
+        <h1 onClick={handleLogout_} className="cursor-pointer">
+          Logout
+        </h1>
       </div>
       <div className="flex gap-4 items-center mt-8">
         <Link

@@ -53,26 +53,22 @@ const AdminLogin = () => {
   };
 
   return (
-    <div className="h-[100vh] flex">
-      <div className=" w-[60%]">
-        <img
-          src={nayanImage}
-          alt=""
-          className="h-[100vh] w-full  object-cover"
-        />
-      </div>
-      <div className="w-[40%] flex items-center justify-center">
+    <div className="h-[100vh] flex flex-col lg:flex-row-reverse">
+      <div className="w-full lg:w-[40%] h-[100px] lg:h-auto flex items-center justify-center">
         <button
           className="btn bg-yellow-500 text-white"
           onClick={handleLoginGoogle}
         >
           <GoogleIcon className="" /> Google Login
         </button>
+      </div>
 
-        {/* <Link to={"/dashboard"}>
-          {" "}
-          <button className="btn btn-primary">Go Dashboard</button>{" "}
-        </Link> */}
+      <div className=" w-full lg:w-[60%] ">
+        <img
+          src={nayanImage}
+          alt=""
+          className="h-[100vh] w-full  object-cover"
+        />
       </div>
     </div>
   );

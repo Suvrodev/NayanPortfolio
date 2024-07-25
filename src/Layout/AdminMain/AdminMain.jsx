@@ -3,6 +3,7 @@ import { Outlet, useNavigate } from "react-router-dom";
 import Header from "../../Shared/Header/Header/Header";
 import MobileHeader from "../../Shared/Header/Header/MobileHeader/MobileHeader";
 import AdminHeader from "../../AdminPages/Shared/AdminHeader/AdminHeader/AdminHeader";
+import AdminMobileHeader from "../../AdminPages/Shared/AdminHeader/AdminMobileHeader/AdminMobileHeader";
 
 const AdminMain = () => {
   const navigate = useNavigate("");
@@ -14,7 +15,8 @@ const AdminMain = () => {
       <div className="flex">
         <div className="w-full md:w-[75%] bg-[#333333]">
           <div className="md:hidden">
-            <MobileHeader />
+            {/* <MobileHeader /> */}
+            <AdminMobileHeader />
           </div>
           <Outlet />
         </div>
