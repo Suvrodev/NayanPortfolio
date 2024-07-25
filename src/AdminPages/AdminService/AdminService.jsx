@@ -4,7 +4,7 @@ import Service from "../../Pages/Service/Service";
 const AdminService = () => {
   return (
     <div>
-      <Service />
+      <Service isAdmin={true} />
     </div>
   );
 };

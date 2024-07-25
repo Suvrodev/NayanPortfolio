@@ -7,7 +7,7 @@ import Consult from "./Consult/Consult";
 import WhatIDo from "./WhatIDo/WhatIDo";
 import pageTitle from "../../JS/pageTitle";
 
-const Service = () => {
+const Service = ({ isAdmin }) => {
   pageTitle("Service");
   return (
     <div className="overflow-hidden">
@@ -15,7 +15,7 @@ const Service = () => {
         <LinkBox text1={"Service"} />
       </div>
       <div className="pageMargin">
-        <WhatIDo />
+        <WhatIDo isAdmin={isAdmin} />
       </div>
       <div className="p-5 md:p-28 bg-[#222222]">
         <TrustedClients />

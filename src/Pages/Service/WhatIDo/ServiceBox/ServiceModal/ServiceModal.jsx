@@ -5,9 +5,10 @@ const ServiceModal = ({ image, popupDesc }) => {
     <div>
       <div className="flex flex-col gap-5">
         <img src={image} alt="" className="w-full" />
-        <div className="p-4 mx-auto text-xl">
+        <div className="p-4 text-xl">
           <div>
-            <p>{popupDesc}</p>
+            {/* <p>{popupDesc}</p> */}
+            <div dangerouslySetInnerHTML={{ __html: popupDesc }} />
           </div>
         </div>
       </div>
