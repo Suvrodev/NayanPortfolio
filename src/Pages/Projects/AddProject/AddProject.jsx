@@ -1,11 +1,19 @@
 import axios from "axios";
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import "./AddProject.css";
 
 import { AuthContext } from "../../../Provider/AuthProvider";
 
 const AddProject = () => {
   const { baseUrl, successfullToast } = useContext(AuthContext);
+
+  //  For Image Show
+  const [imageText, setImageText] = useState("");
+  const handleTextChange = (event) => {
+    setImageText(event.target.value);
+    console.log(event.target.value);
+  };
+
   const handleAddProject = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -43,6 +51,10 @@ const AddProject = () => {
     <div className="p-28">
       <h1 className="text-2xl text-white font-bold">Add Project</h1>
       <div className="py-10">
+        <div className="flex justify-center mb-10">
+          <img src={imageText} alt="" className="w-[450px] h-[320px]" />
+        </div>
+
         <form onSubmit={handleAddProject}>
           <input
             type="text"
@@ -58,6 +70,7 @@ const AddProject = () => {
             id=""
             className="w-full bg-transparent border p-5 mt-10 text-white"
             placeholder="Image url"
+            onChange={handleTextChange}
           />
 
           <input

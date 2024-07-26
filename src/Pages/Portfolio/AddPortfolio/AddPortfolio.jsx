@@ -14,6 +14,14 @@ const portfolioContent = [
 const AddPortfolio = () => {
   const { successfullToast, baseUrl } = useContext(AuthContext);
 
+  //  For Image Show
+  const [imageText, setImageText] = useState("");
+  const handleTextChange = (event) => {
+    setImageText(event.target.value);
+    console.log(event.target.value);
+  };
+
+  // For Drop down
   const [selected, setSelected] = useState("Web Design & Development");
   const handleChange = (event) => {
     const value = event.target.value;
@@ -21,6 +29,7 @@ const AddPortfolio = () => {
   };
   // console.log("Category: ", selected);
 
+  // For Add Portfolio
   const handleAddPortfolio = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -70,6 +79,10 @@ const AddPortfolio = () => {
           </div>
         </div>
 
+        <div className="flex justify-center mb-10">
+          <img src={imageText} alt="" className="w-[450px] h-[320px]" />
+        </div>
+
         <form onSubmit={handleAddPortfolio}>
           <input
             type="url"
@@ -77,6 +90,7 @@ const AddPortfolio = () => {
             id=""
             className="w-full bg-transparent border p-5 mt-10 text-white"
             placeholder="Image url"
+            onChange={handleTextChange}
           />
 
           <button className="btn text-white w-[250px] mt-10 bg-[#222222] hover:bg-[#444444] border-0">

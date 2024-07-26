@@ -10,6 +10,13 @@ const AddService = () => {
   const editor = useRef(null);
   const [content, setContent] = useState("");
 
+  // For Image
+  const [imageText, setImageText] = useState("");
+  const handleTextChange = (event) => {
+    setImageText(event.target.value);
+    console.log(event.target.value);
+  };
+
   const handleAddGigs = (e) => {
     e.preventDefault();
     console.log("Add service");
@@ -45,6 +52,10 @@ const AddService = () => {
     <div className="p-28">
       <h1 className="text-2xl text-white font-bold">Add Service</h1>
       <div className="py-10">
+        <div className="flex justify-center mb-10">
+          <img src={imageText} alt="" className="w-[450px] h-[320px]" />
+        </div>
+
         <form onSubmit={handleAddGigs}>
           <input
             type="text"
@@ -60,6 +71,7 @@ const AddService = () => {
             id=""
             className="w-full bg-transparent border p-5 mt-10 text-white"
             placeholder="Image url"
+            onChange={handleTextChange}
           />
 
           <textarea

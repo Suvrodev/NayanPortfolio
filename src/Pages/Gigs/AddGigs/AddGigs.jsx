@@ -1,9 +1,17 @@
 import axios from "axios";
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { AuthContext } from "../../../Provider/AuthProvider";
 
 const AddGigs = () => {
   const { successfullToast, baseUrl } = useContext(AuthContext);
+
+  //  For Image Show
+  const [imageText, setImageText] = useState("");
+  const handleTextChange = (event) => {
+    setImageText(event.target.value);
+    console.log(event.target.value);
+  };
+
   const handleAddGigs = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -41,6 +49,10 @@ const AddGigs = () => {
     <div className="p-28">
       <h1 className="text-2xl text-white font-bold">Add Gigs</h1>
       <div className="py-10">
+        <div className="flex justify-center mb-10">
+          <img src={imageText} alt="" className="w-[450px] h-[320px]" />
+        </div>
+
         <form onSubmit={handleAddGigs}>
           <input
             type="text"
@@ -56,6 +68,7 @@ const AddGigs = () => {
             id=""
             className="w-full bg-transparent border p-5 mt-10 text-white"
             placeholder="Image url"
+            onChange={handleTextChange}
           />
 
           <input
