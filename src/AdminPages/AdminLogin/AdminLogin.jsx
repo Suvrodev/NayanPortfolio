@@ -4,6 +4,7 @@ import { AuthContext } from "../../Provider/AuthProvider";
 import GoogleIcon from "@mui/icons-material/Google";
 import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
+import encode from "../../JS/encode";
 
 const AdminLogin = () => {
   const {
@@ -28,7 +29,10 @@ const AdminLogin = () => {
     handleLogIn()
       .then((result) => {
         const loggedUser = result.user;
-        localStorage.setItem("email", loggedUser?.email);
+        const getEncodeEmail = encode(loggedUser?.email);
+        console.log("Encode Email: ", getEncodeEmail);
+        localStorage.setItem("email", getEncodeEmail);
+        // localStorage.setItem("email", loggedUser?.email);
         setLocalStorageDep(!localstorageDep);
 
         // console.log(loggedUser);

@@ -9,6 +9,7 @@ import {
 import { app } from "../firebase/firebase.config";
 import Swal from "sweetalert2";
 import axios from "axios";
+import decode from "../JS/decode";
 
 export const AuthContext = createContext(null);
 const auth = getAuth(app);
@@ -70,7 +71,8 @@ const AuthProvider = ({ children }) => {
   // }, []);
   useEffect(() => {
     const storedEmail = localStorage.getItem("email");
-    setMail(storedEmail);
+    const getDecodeEmail = decode(storedEmail);
+    setMail(getDecodeEmail);
 
     if (mail) {
       axios.get(`${baseUrl}/user/${mail}`).then((res) => {
