@@ -12,8 +12,17 @@ const AdminLogin = () => {
     handleLogIn,
     localstorageDep,
     setLocalStorageDep,
+    dbUser,
   } = useContext(AuthContext);
+
   const navigate = useNavigate();
+  // useEffect(() => {
+  //   if (dbUser.role == "admin") {
+  //     navigate("/dashboard");
+  //   } else {
+  //     navigate("/");
+  //   }
+  // }, []);
 
   const handleLoginGoogle = () => {
     handleLogIn()

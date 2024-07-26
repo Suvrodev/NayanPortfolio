@@ -64,17 +64,20 @@ const AuthProvider = ({ children }) => {
    */
   const [localstorageDep, setLocalStorageDep] = useState(true);
   const [mail, setMail] = useState("");
+  // useEffect(() => {
+  //   const storedEmail = localStorage.getItem("email");
+  //   setMail(storedEmail);
+  // }, []);
   useEffect(() => {
     const storedEmail = localStorage.getItem("email");
     setMail(storedEmail);
-  }, []);
-  useEffect(() => {
+
     if (mail) {
       axios.get(`${baseUrl}/user/${mail}`).then((res) => {
         setDbUser(res.data);
       });
     }
-  }, [mail]);
+  }, [mail, localstorageDep]);
   console.log("Current DB User: ", dbUser);
 
   /**

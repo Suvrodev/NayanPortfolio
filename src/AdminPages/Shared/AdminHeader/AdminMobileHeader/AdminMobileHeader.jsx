@@ -128,6 +128,15 @@ const AdminMobileHeader = () => {
             Contact
           </NavLink>
 
+          <NavLink
+            className={({ isActive }) =>
+              isActive ? "text-blue-500 font-extrabold" : ""
+            }
+            to="/dashboard/adminuser"
+          >
+            User
+          </NavLink>
+
           <h1 onClick={handleLogout_} className="cursor-pointer">
             Logout
           </h1>

@@ -31,6 +31,7 @@ import AddPortfolio from "../Pages/Portfolio/AddPortfolio/AddPortfolio";
 import UpdatePortfolio from "../Pages/Portfolio/UpdatePortfolio/UpdatePortfolio";
 import AddService from "../Pages/Service/WhatIDo/AddService/AddService";
 import UpdateService from "../Pages/Service/WhatIDo/UpdateService/UpdateService";
+import AdminUser from "../AdminPages/AdminUser/AdminUser";
 
 const router = createBrowserRouter([
   {
@@ -89,6 +90,10 @@ const router = createBrowserRouter([
       </PrivateRoute>
     ),
     children: [
+      {
+        path: "/dashboard",
+        element: <Navigate to="/dashboard/home"></Navigate>,
+      },
       {
         path: "/dashboard/home",
         element: (
@@ -222,6 +227,14 @@ const router = createBrowserRouter([
         element: (
           <PrivateRoute>
             <AdminContact />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/dashboard/adminuser",
+        element: (
+          <PrivateRoute>
+            <AdminUser />
           </PrivateRoute>
         ),
       },
